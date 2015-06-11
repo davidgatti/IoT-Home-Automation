@@ -1,6 +1,11 @@
 # IoT-Garage-Opener
 A simple project that uses a Particle to control a garage remote over the internet
 
+# URLs
+
+- https://www.hackster.io/davidgatti/garage-opener
+- https://twitter.com/dawidgatti
+
 # How to add Particle Device ID and Token
 
 Since this data is sensitive I had to make sure that I’m not releasing to the public the Token. Otherwise everybody would start to open and close my garage :) 
