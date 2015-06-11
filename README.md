@@ -1,3 +1,5 @@
+![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/master/header.jpg "IoT Garage Opener")
+
 # IoT-Garage-Opener
 A simple project that uses a Particle to control a garage remote over the internet
 
