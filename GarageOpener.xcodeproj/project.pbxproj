@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E544A0BD1B2A2B7500596B80 /* ParticleCode.ino in Resources */ = {isa = PBXBuildFile; fileRef = E544A0BC1B2A2B7500596B80 /* ParticleCode.ino */; };
 		E55058E71B28B03C00F6CFD0 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = E55058E61B28B03C00F6CFD0 /* Secrets.plist */; };
 		E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08C81B22974F009B50D4 /* AppDelegate.swift */; };
 		E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E59B08CA1B22974F009B50D4 /* GarageOpener.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E544A0BC1B2A2B7500596B80 /* ParticleCode.ino */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParticleCode.ino; sourceTree = "<group>"; };
 		E55058E61B28B03C00F6CFD0 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		E59B08C31B22974F009B50D4 /* GarageOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59B08C71B22974F009B50D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +100,6 @@
 				E5D36DF51B2644A9004B675F /* AppSettings.swift */,
 				E59B08CF1B22974F009B50D4 /* Main.storyboard */,
 				E59B08C61B22974F009B50D4 /* Supporting Files */,
-				E5D36DF31B24FE19004B675F /* Settings.bundle */,
 			);
 			path = GarageOpener;
 			sourceTree = "<group>";
@@ -106,12 +107,14 @@
 		E59B08C61B22974F009B50D4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E5D36DF31B24FE19004B675F /* Settings.bundle */,
+				E59B08D21B22974F009B50D4 /* Images.xcassets */,
 				E59B08F51B24B94B009B50D4 /* SwiftJSON.swift */,
 				E59B08D41B22974F009B50D4 /* LaunchScreen.xib */,
 				E59B08CA1B22974F009B50D4 /* GarageOpener.xcdatamodeld */,
-				E59B08D21B22974F009B50D4 /* Images.xcassets */,
 				E59B08C71B22974F009B50D4 /* Info.plist */,
 				E55058E61B28B03C00F6CFD0 /* Secrets.plist */,
+				E544A0BC1B2A2B7500596B80 /* ParticleCode.ino */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				E5D36DF41B24FE19004B675F /* Settings.bundle in Resources */,
 				E59B08D61B22974F009B50D4 /* LaunchScreen.xib in Resources */,
 				E59B08D31B22974F009B50D4 /* Images.xcassets in Resources */,
+				E544A0BD1B2A2B7500596B80 /* ParticleCode.ino in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
