@@ -31,3 +31,5 @@ DerivedData
 # Carthage/Checkouts
 
 Carthage/Build
+
+GarageOpener/Secrets.plist
