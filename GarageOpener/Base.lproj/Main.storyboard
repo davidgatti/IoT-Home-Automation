@@ -30,9 +30,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="irn-UJ-D1g" firstAttribute="top" secondItem="tZw-ld-opE" secondAttribute="bottom" constant="8" symbolic="YES" id="OOs-St-Y1S"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="irn-UJ-D1g" secondAttribute="bottom" constant="262" id="gat-JZ-nhJ"/>
                             <constraint firstItem="irn-UJ-D1g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oPr-kY-gXy"/>
                             <constraint firstItem="irn-UJ-D1g" firstAttribute="centerX" secondItem="tZw-ld-opE" secondAttribute="centerX" id="pns-8F-QIt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="irn-UJ-D1g" secondAttribute="bottom" constant="262" id="xm8-ny-egz"/>
                         </constraints>
                     </view>
                     <connections>
