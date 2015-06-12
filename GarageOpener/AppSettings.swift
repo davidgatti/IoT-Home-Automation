@@ -13,6 +13,7 @@ class AppSettings {
     static let sharedInstance = AppSettings()
     
     var lastUser: String = ""
+    var isOpen: Int = 0
     var token: String = ""
     var deviceID: String = ""
     

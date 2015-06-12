@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var btnOpenClose: UIButton!
     @IBOutlet weak var msgLastUser: UILabel!
     
-    var isOpen: Bool = false
     var setting = AppSettings.sharedInstance
     
     override func viewDidLoad() {
@@ -38,40 +37,27 @@ class MainViewController: UIViewController {
     }
     
     func loda() {
-        httpGet("isopen") { (data, error) -> Void in
+
+        var btnState: String
+        var strState: String
+        
+        if self.setting.isOpen == 0 {
             
-            if error != nil {
-                
-                println(error!.localizedDescription)
-                
-            } else {
-                
-                var result = NSString(data: data, encoding: NSASCIIStringEncoding)!
-                
-                var json = JSON(data: data)
-                var btnState: String
-                var strState: String
-                
-                if json["result"] == 0 {
-                    
-                    btnState = "Open"
-                    strState = "close"
-                    self.isOpen = true
-                    
-                } else {
-                    
-                    btnState = "Close"
-                    strState = "open"
-                    self.isOpen = false
-                    
-                }
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.btnOpenClose.setTitle(btnState, forState: UIControlState.Normal)
-                    self.msgLastUser.text = "Last person to " + strState + " was: " + self.setting.lastUser
-                }
-                
-            }
+            btnState = "Open"
+            strState = "close"
+            self.setting.isOpen = 1
+            
+        } else {
+            
+            btnState = "Close"
+            strState = "open"
+            self.setting.isOpen = 0
+            
+        }
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.btnOpenClose.setTitle(btnState, forState: UIControlState.Normal)
+            self.msgLastUser.text = "Last person to " + strState + " was: " + self.setting.lastUser
         }
     }
     
@@ -92,7 +78,7 @@ class MainViewController: UIViewController {
                 var btnState: String
                 var strState: String
                 
-                if self.isOpen {
+                if self.setting.isOpen == 0 {
                     btnState = "Close"
                     strState = "open"
                     
@@ -109,7 +95,11 @@ class MainViewController: UIViewController {
                     self.spinner.hidden = true
                 }
                 
-                self.isOpen = !self.isOpen
+                if self.setting.isOpen == 0 {
+                    self.setting.isOpen == 1
+                } else {
+                    self.setting.isOpen == 0
+                }
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 let name = defaults.stringForKey("name_preference")!

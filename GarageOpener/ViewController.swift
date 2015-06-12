@@ -15,51 +15,66 @@ class ViewController: UIViewController {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
+        // Check if the app was run for the first time
         if let name = defaults.stringForKey("name_preference") {
             
             httpGet("") { (data, error) -> Void in
                 
-                if error != nil {
+                if error == nil {
                     
-                    println(error!.localizedDescription)
-                    
-                } else {
-                    
-                    var result = NSString(data: data, encoding: NSASCIIStringEncoding)!
-                    
-                    var json = JSON(data: data)
-                    
-                    if !json["connected"] {
+                    if data["connected"] {
                         
-                        self.performSegueWithIdentifier("errorTransition", sender: self)
-                        
-                    } else {
                         httpGet("username") { (data, error) -> Void in
                             
-                            if error != nil {
-                                
-                                println(error!.localizedDescription)
-                                
-                            } else {
-                                
-                                var result = NSString(data: data, encoding: NSASCIIStringEncoding)!
-                                var json = JSON(data: data)
+                            if error == nil {
                                 
                                 var setting = AppSettings.sharedInstance
-                                let userName:JSON = json["result"]
+                                let userName:JSON = data["result"]
+                                
                                 setting.lastUser = userName.string!
                                 
-                                self.performSegueWithIdentifier("mainTransition", sender: self)
+                                httpGet("isopen") { (data, error) -> Void in
+                                    
+                                    if error == nil {
+                                        
+                                        var setting = AppSettings.sharedInstance
+                                        let isOpen:JSON = data["result"]
+                                        
+                                        setting.isOpen = isOpen.int!
+                                        
+                                        dispatch_async(dispatch_get_main_queue()) {
+                                            self.performSegueWithIdentifier("mainTransition", sender: self)
+                                        }
+                                        
+                                    }
+                                    else
+                                    {
+                                        println(error!.localizedDescription)
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                println(error!.localizedDescription)
                             }
                         }
                     }
+                    else
+                    {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.performSegueWithIdentifier("errorTransition", sender: self)
+                        }
+                    }
+                }
+                else
+                {
+                    println(error!.localizedDescription)
                 }
             }
-            
-        } else {
-            
+        }
+        else
+        {
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
-            
         }
     }
 }

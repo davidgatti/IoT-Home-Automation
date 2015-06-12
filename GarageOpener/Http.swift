@@ -11,21 +11,23 @@ import Foundation
 var token = AppSettings.sharedInstance.token
 var device = AppSettings.sharedInstance.deviceID
 
-func httpGet(name: String, callback: (NSData, NSError?) -> Void) {
+func httpGet(name: String, callback: (JSON, NSError?) -> Void) {
     
     let url = "https://api.particle.io/v1/devices/" + device + "/" + name + "?access_token=" + token
     
     let request = NSMutableURLRequest(URL: NSURL(string: url)!)
     var session = NSURLSession.sharedSession()
     var task = session.dataTaskWithRequest(request){(data, response, error) -> Void in
+    var result = NSString(data: data, encoding: NSASCIIStringEncoding)!
+    var json = JSON(data: data)
         
         if error != nil {
             
-            callback(data, error)
+            callback(json, error)
             
         } else {
             
-            callback(data, nil)
+            callback(json, nil)
             
         }
     }
