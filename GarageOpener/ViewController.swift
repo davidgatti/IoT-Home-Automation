@@ -30,8 +30,10 @@ class ViewController: UIViewController {
                                 
                                 var setting = AppSettings.sharedInstance
                                 let userName:JSON = data["result"]
-                                
+                                let lastUsed:JSON = data["coreInfo"]["last_heard"]
+
                                 setting.lastUser = userName.string!
+                                setting.lastUsed = lastUsed.string!
                                 
                                 httpGet("isopen") { (data, error) -> Void in
                                     

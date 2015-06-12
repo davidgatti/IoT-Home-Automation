@@ -51,6 +51,7 @@ class MainViewController: UIViewController {
             self.btnOpenClose.setTitle(btnState, forState: UIControlState.Normal)
             self.msgLastUser.text = "was the last person to " + strState + "."
             self.msgLastUserName.text = self.setting.lastUser
+            self.msgLastDate.text = self.setting.lastUsed
         }
     }
     
@@ -85,6 +86,7 @@ class MainViewController: UIViewController {
                     
                     self.msgLastUser.text = "was the last person to " + strState + "."
                     self.msgLastUserName.text = "You"
+                    self.msgLastDate.text = "Now"
                 
                     sender.enabled = true
                     self.spinner.hidden = true

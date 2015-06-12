@@ -16,6 +16,7 @@ class AppSettings {
     var isOpen: Int = 0
     var token: String = ""
     var deviceID: String = ""
+    var lastUsed: String = ""
     
     init() {
         var myDict: NSDictionary?
