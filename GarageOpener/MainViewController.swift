@@ -13,27 +13,19 @@ class MainViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var btnOpenClose: UIButton!
     @IBOutlet weak var msgLastUser: UILabel!
+    @IBOutlet weak var msgLastUserName: UILabel!
+    @IBOutlet weak var msgLastDate: UILabel!
     
     var setting = AppSettings.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Ask to be notyfied the app comes back from baground.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "willEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
         self.loda()
     
-    }
-    
-    func willEnterForeground(notification: NSNotification!) {
-        self.performSegueWithIdentifier("backLoading", sender: self)
-    }
-    
-    deinit {
-        
-        // make sure to remove the observer when this view controller is dismissed/deallocated
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: nil, object: nil)
-        
     }
     
     func loda() {
@@ -57,7 +49,8 @@ class MainViewController: UIViewController {
         
         dispatch_async(dispatch_get_main_queue()) {
             self.btnOpenClose.setTitle(btnState, forState: UIControlState.Normal)
-            self.msgLastUser.text = "Last person to " + strState + " was: " + self.setting.lastUser
+            self.msgLastUser.text = "was the last person to " + strState + "."
+            self.msgLastUserName.text = self.setting.lastUser
         }
     }
     
@@ -89,7 +82,9 @@ class MainViewController: UIViewController {
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     sender.setTitle(btnState, forState: UIControlState.Normal)
-                    self.msgLastUser.text = "Last person to " + strState + " was: You"
+                    
+                    self.msgLastUser.text = "was the last person to " + strState + "."
+                    self.msgLastUserName.text = "You"
                 
                     sender.enabled = true
                     self.spinner.hidden = true
@@ -109,5 +104,15 @@ class MainViewController: UIViewController {
                 
             }
         }
+    }
+    
+    // Detect when the app coems back from the baground.
+    func willEnterForeground(notification: NSNotification!) {
+        self.performSegueWithIdentifier("backLoading", sender: self)
+    }
+    
+    deinit {
+        // make sure to remove the observer when this view controller is dismissed/deallocated
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: nil, object: nil)
     }
 }
