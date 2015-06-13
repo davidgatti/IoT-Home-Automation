@@ -16,25 +16,22 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5K0-Ju-BcQ">
-                    <rect key="frame" x="290" y="318" width="20" height="20"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="5K0-Ju-BcQ" firstAttribute="centerX" secondItem="uW9-b2-Bpb" secondAttribute="centerX" id="Tco-xl-Vju"/>
-                <constraint firstItem="5K0-Ju-BcQ" firstAttribute="top" secondItem="uW9-b2-Bpb" secondAttribute="bottom" constant="8" symbolic="YES" id="Va8-3Q-5X4"/>
-                <constraint firstItem="uW9-b2-Bpb" firstAttribute="top" secondItem="Fuy-ZT-F6f" secondAttribute="top" constant="289" id="enF-v1-sv3"/>
-                <constraint firstItem="5K0-Ju-BcQ" firstAttribute="centerX" secondItem="Fuy-ZT-F6f" secondAttribute="centerX" id="ha7-DE-frq"/>
+                <constraint firstItem="uW9-b2-Bpb" firstAttribute="top" secondItem="Fuy-ZT-F6f" secondAttribute="top" constant="289" id="rgm-2q-vKb"/>
+                <constraint firstItem="uW9-b2-Bpb" firstAttribute="centerX" secondItem="Fuy-ZT-F6f" secondAttribute="centerX" id="ws6-Ou-v8h"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="enF-v1-sv3"/>
+                    <exclude reference="rgm-2q-vKb"/>
+                    <exclude reference="ws6-Ou-v8h"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="constraints">
-                    <include reference="enF-v1-sv3"/>
+                    <include reference="rgm-2q-vKb"/>
+                    <include reference="ws6-Ou-v8h"/>
                 </mask>
             </variation>
         </view>
