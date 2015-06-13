@@ -94,8 +94,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Exlamation" translatesAutoresizingMaskIntoConstraints="NO" id="Twz-sh-iQg">
-                                <rect key="frame" x="121" y="149" width="359" height="302"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exlamation" translatesAutoresizingMaskIntoConstraints="NO" id="Twz-sh-iQg">
+                                <rect key="frame" x="167" y="181" width="268" height="369"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="359" id="z4W-ZI-DkZ"/>
                                 </constraints>
@@ -120,9 +120,11 @@
                             <constraint firstItem="oI8-Yt-XTW" firstAttribute="centerX" secondItem="6OX-YC-DZb" secondAttribute="centerX" id="ObX-ch-g20"/>
                             <constraint firstItem="Twz-sh-iQg" firstAttribute="centerX" secondItem="oI8-Yt-XTW" secondAttribute="centerX" id="Rb3-I3-sHr"/>
                             <constraint firstItem="oI8-Yt-XTW" firstAttribute="top" secondItem="6OX-YC-DZb" secondAttribute="bottom" constant="24" id="Wvx-kf-KMG"/>
+                            <constraint firstItem="ZAm-e8-FMI" firstAttribute="top" secondItem="Twz-sh-iQg" secondAttribute="bottom" constant="50" id="aTC-Z0-Cs2"/>
                             <constraint firstItem="Twz-sh-iQg" firstAttribute="top" secondItem="oI8-Yt-XTW" secondAttribute="bottom" constant="22" id="ffY-TP-oa4"/>
                             <constraint firstItem="Twz-sh-iQg" firstAttribute="centerX" secondItem="oI8-Yt-XTW" secondAttribute="centerX" id="gjd-sD-QKG"/>
                             <constraint firstItem="Twz-sh-iQg" firstAttribute="centerX" secondItem="oI8-Yt-XTW" secondAttribute="centerX" id="tv2-Oz-j5A"/>
+                            <constraint firstAttribute="centerX" secondItem="Twz-sh-iQg" secondAttribute="centerX" constant="-0.5" id="waS-pL-Fl4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
