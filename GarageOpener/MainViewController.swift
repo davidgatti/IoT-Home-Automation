@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var msgLastUser: UILabel!
     @IBOutlet weak var msgLastUserName: UILabel!
     @IBOutlet weak var msgLastDate: UILabel!
+    @IBOutlet weak var msgUseCount: UILabel!
     
     var setting = AppSettings.sharedInstance
     
@@ -52,6 +53,7 @@ class MainViewController: UIViewController {
             self.msgLastUser.text = "was the last person to " + strState + "."
             self.msgLastUserName.text = self.setting.lastUser
             self.msgLastDate.text = self.setting.lastUsed
+            self.msgUseCount.text = String(self.setting.useCount)
         }
     }
     
@@ -87,9 +89,13 @@ class MainViewController: UIViewController {
                     self.msgLastUser.text = "was the last person to " + strState + "."
                     self.msgLastUserName.text = "You"
                     self.msgLastDate.text = "Now"
-                
+
+                    self.setting.useCount++
+                    self.msgUseCount.text = String(self.setting.useCount)
+                    
                     sender.enabled = true
                     self.spinner.hidden = true
+                    
                 }
                 
                 if self.setting.isOpen == 0 {

@@ -44,10 +44,25 @@ class ViewController: UIViewController {
                                         
                                         setting.isOpen = isOpen.int!
                                         
-                                        dispatch_async(dispatch_get_main_queue()) {
-                                            self.performSegueWithIdentifier("mainTransition", sender: self)
+                                        httpGet("usecount") { (data, error) -> Void in
+                                            
+                                            if error == nil {
+                                                
+                                                var setting = AppSettings.sharedInstance
+                                                let useCount:JSON = data["result"]
+                                                
+                                                setting.useCount = useCount.int!
+                                                
+                                                dispatch_async(dispatch_get_main_queue()) {
+                                                    self.performSegueWithIdentifier("mainTransition", sender: self)
+                                                }
+                                                
+                                            }
+                                            else
+                                            {
+                                                println(error!.localizedDescription)
+                                            }
                                         }
-                                        
                                     }
                                     else
                                     {

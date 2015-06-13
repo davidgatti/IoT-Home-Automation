@@ -11,9 +11,10 @@ import Foundation
 
 class AppSettings {
     static let sharedInstance = AppSettings()
-    
-    var lastUser: String = ""
+
     var isOpen: Int = 0
+    var useCount: Int = 0
+    var lastUser: String = ""
     var token: String = ""
     var deviceID: String = ""
     var lastUsed: String = ""

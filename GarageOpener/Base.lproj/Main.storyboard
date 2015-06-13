@@ -213,6 +213,18 @@
                                     <constraint firstAttribute="height" constant="1" id="NNA-B5-QCA"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ati-7O-oBe">
+                                <rect key="frame" x="568" y="578" width="22" height="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Count:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWJ-LK-csk">
+                                <rect key="frame" x="514" y="578" width="46" height="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -223,13 +235,16 @@
                             <constraint firstItem="Urr-9Z-5V8" firstAttribute="top" secondItem="m3g-QO-Gpx" secondAttribute="bottom" constant="346" id="9Mo-cz-KQb"/>
                             <constraint firstItem="2KY-8F-xuH" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="FfX-Gm-c2D"/>
                             <constraint firstItem="m3g-QO-Gpx" firstAttribute="top" secondItem="d23-ps-j4H" secondAttribute="bottom" constant="8" id="KE1-2S-LUF"/>
+                            <constraint firstItem="ati-7O-oBe" firstAttribute="leading" secondItem="lWJ-LK-csk" secondAttribute="trailing" constant="8" id="M51-mK-UO7"/>
                             <constraint firstItem="D3i-v8-l0w" firstAttribute="centerY" secondItem="OKL-8d-6Q7" secondAttribute="centerY" id="Ovn-RU-TIJ"/>
+                            <constraint firstItem="Urr-9Z-5V8" firstAttribute="top" secondItem="lWJ-LK-csk" secondAttribute="bottom" constant="10" id="PuR-ZL-avq"/>
                             <constraint firstItem="D3i-v8-l0w" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="Ttg-BS-95Q"/>
                             <constraint firstItem="KLI-Dl-0Ua" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="URU-8U-6zr"/>
                             <constraint firstItem="2KY-8F-xuH" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="WFw-dR-2f8"/>
                             <constraint firstItem="8BE-Gu-dGM" firstAttribute="centerX" secondItem="d23-ps-j4H" secondAttribute="centerX" id="YsO-Kv-B02"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8BE-Gu-dGM" secondAttribute="trailing" id="a0f-RV-xAw"/>
                             <constraint firstItem="d23-ps-j4H" firstAttribute="centerX" secondItem="m3g-QO-Gpx" secondAttribute="centerX" id="f6S-St-VbR"/>
+                            <constraint firstAttribute="trailing" secondItem="ati-7O-oBe" secondAttribute="trailing" constant="10" id="hc7-9w-E9w"/>
                             <constraint firstItem="D3i-v8-l0w" firstAttribute="top" secondItem="KLI-Dl-0Ua" secondAttribute="bottom" constant="9" id="icV-kD-rGx"/>
                             <constraint firstItem="OKL-8d-6Q7" firstAttribute="top" secondItem="brS-Sd-NLU" secondAttribute="bottom" constant="8" id="lsW-IO-TYE"/>
                             <constraint firstItem="OKL-8d-6Q7" firstAttribute="leading" secondItem="Dz5-Wm-XfG" secondAttribute="leadingMargin" id="oie-05-sA9"/>
@@ -237,6 +252,7 @@
                             <constraint firstItem="d23-ps-j4H" firstAttribute="top" secondItem="8BE-Gu-dGM" secondAttribute="bottom" constant="20" id="puW-OI-NEM"/>
                             <constraint firstItem="2KY-8F-xuH" firstAttribute="top" secondItem="D3i-v8-l0w" secondAttribute="bottom" constant="17" id="q4V-S2-aAq"/>
                             <constraint firstItem="2KY-8F-xuH" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="uSd-2O-1i9"/>
+                            <constraint firstItem="Urr-9Z-5V8" firstAttribute="top" secondItem="ati-7O-oBe" secondAttribute="bottom" constant="10" id="zA1-Xe-Mbg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -260,13 +276,14 @@
                         <outlet property="msgLastDate" destination="2KY-8F-xuH" id="CMC-3j-8T8"/>
                         <outlet property="msgLastUser" destination="D3i-v8-l0w" id="32h-Kj-ano"/>
                         <outlet property="msgLastUserName" destination="KLI-Dl-0Ua" id="ddm-qg-Rku"/>
+                        <outlet property="msgUseCount" destination="ati-7O-oBe" id="Ae8-FJ-UHo"/>
                         <outlet property="spinner" destination="m3g-QO-Gpx" id="2bB-Rs-MIU"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backLoading" id="6xX-b1-1Wd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHy-vw-7iM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280.5" y="1165"/>
+            <point key="canvasLocation" x="280" y="1165"/>
         </scene>
     </scenes>
     <resources>
