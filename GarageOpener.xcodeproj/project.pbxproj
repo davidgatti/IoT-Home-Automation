@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E55C85B81B2CAF090063B75E /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C85B71B2CAF090063B75E /* NewAccount.swift */; };
 		E575BDF51B2B5B5F00457AE8 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = E575BDF41B2B5B5F00457AE8 /* Secrets.plist */; };
 		E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08C81B22974F009B50D4 /* AppDelegate.swift */; };
 		E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E59B08CA1B22974F009B50D4 /* GarageOpener.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E55C85B71B2CAF090063B75E /* NewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
 		E575BDF41B2B5B5F00457AE8 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		E59B08C31B22974F009B50D4 /* GarageOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59B08C71B22974F009B50D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				E59B08C81B22974F009B50D4 /* AppDelegate.swift */,
+				E55C85B71B2CAF090063B75E /* NewAccount.swift */,
 				E59B08CD1B22974F009B50D4 /* ViewController.swift */,
 				E59B08F91B24E539009B50D4 /* MainViewController.swift */,
 				E59B08F31B23FA6F009B50D4 /* Http.swift */,
@@ -238,6 +241,7 @@
 			files = (
 				E59B08CE1B22974F009B50D4 /* ViewController.swift in Sources */,
 				E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */,
+				E55C85B81B2CAF090063B75E /* NewAccount.swift in Sources */,
 				E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */,
 				E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */,
 				E59B08F41B23FA6F009B50D4 /* Http.swift in Sources */,

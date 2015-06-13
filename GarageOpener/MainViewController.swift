@@ -11,11 +11,11 @@ import UIKit
 class MainViewController: UIViewController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var btnOpenClose: UIButton!
     @IBOutlet weak var msgLastUser: UILabel!
     @IBOutlet weak var msgLastUserName: UILabel!
     @IBOutlet weak var msgLastDate: UILabel!
     @IBOutlet weak var msgUseCount: UILabel!
+    @IBOutlet weak var btnOC: UIButton!
     
     var setting = AppSettings.sharedInstance
     
@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         }
         
         dispatch_async(dispatch_get_main_queue()) {
-            self.btnOpenClose.setTitle(btnState, forState: UIControlState.Normal)
+            self.btnOC.setTitle(btnState, forState: UIControlState.Normal)
             self.msgLastUser.text = "was the last person to " + strState + "."
             self.msgLastUserName.text = self.setting.lastUser
             self.msgUseCount.text = String(self.setting.useCount)

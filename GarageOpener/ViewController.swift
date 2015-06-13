@@ -96,7 +96,11 @@ class ViewController: UIViewController {
         }
         else
         {
-            UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+            //UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.performSegueWithIdentifier("firstLogin", sender: self)
+            }
+
         }
     }
 }
