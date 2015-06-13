@@ -32,8 +32,13 @@ class ViewController: UIViewController {
                                 let userName:JSON = data["result"]
                                 let lastUsed:JSON = data["coreInfo"]["last_heard"]
 
+                                var dateFormatter = NSDateFormatter()
+                                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.zzz'Z'"
+                                
+                                var date:NSDate = dateFormatter.dateFromString(lastUsed.string!)!
+                                
                                 setting.lastUser = userName.string!
-                                setting.lastUsed = lastUsed.string!
+                                setting.lastUsed = date
                                 
                                 httpGet("isopen") { (data, error) -> Void in
                                     

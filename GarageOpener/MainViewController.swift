@@ -52,8 +52,13 @@ class MainViewController: UIViewController {
             self.btnOpenClose.setTitle(btnState, forState: UIControlState.Normal)
             self.msgLastUser.text = "was the last person to " + strState + "."
             self.msgLastUserName.text = self.setting.lastUser
-            self.msgLastDate.text = self.setting.lastUsed
             self.msgUseCount.text = String(self.setting.useCount)
+            
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.LongStyle
+            formatter.timeStyle = .MediumStyle
+            
+            self.msgLastDate.text = formatter.stringFromDate(self.setting.lastUsed)
         }
     }
     

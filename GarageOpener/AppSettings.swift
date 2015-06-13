@@ -17,9 +17,10 @@ class AppSettings {
     var lastUser: String = ""
     var token: String = ""
     var deviceID: String = ""
-    var lastUsed: String = ""
+    var lastUsed: NSDate = NSDate.distantPast() as! NSDate
     
     init() {
+        
         var myDict: NSDictionary?
         
         if let path = NSBundle.mainBundle().pathForResource("Secrets", ofType: "plist") {
