@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MainViewController: UIViewController {
     
@@ -26,38 +27,22 @@ class MainViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "willEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
         self.loda()
-    
     }
     
     func loda() {
 
-        var btnState: String
-        var strState: String
-        
-        if self.setting.isOpen == 0 {
-            
-            btnState = "Open"
-            strState = "close"
-            self.setting.isOpen = 1
-            
-        } else {
-            
-            btnState = "Close"
-            strState = "open"
-            self.setting.isOpen = 0
-            
-        }
-        
+        var state = self.GarageDoorState()
+                
         dispatch_async(dispatch_get_main_queue()) {
-            self.btnOC.setTitle(btnState, forState: UIControlState.Normal)
-            self.msgLastUser.text = "was the last person to " + strState + "."
+            self.btnOC.setTitle(state.btn, forState: UIControlState.Normal)
+            self.msgLastUser.text = "was the last person to " + state.str + "."
             self.msgLastUserName.text = self.setting.lastUser
             self.msgUseCount.text = String(self.setting.useCount)
             
+            // Format and display the date based on the iPhone locale.
             let formatter = NSDateFormatter()
             formatter.dateStyle = NSDateFormatterStyle.LongStyle
             formatter.timeStyle = .MediumStyle
-            
             self.msgLastDate.text = formatter.stringFromDate(self.setting.lastUsed)
         }
     }
@@ -75,48 +60,54 @@ class MainViewController: UIViewController {
                 
             } else {
                 
-                var result = NSString(data: data, encoding: NSASCIIStringEncoding)!
-                var btnState: String
-                var strState: String
-                
-                if self.setting.isOpen == 0 {
-                    btnState = "Close"
-                    strState = "open"
-                    
-                } else {
-                    btnState = "Open"
-                    strState = "close"
-                }
+                var state = self.GarageDoorState()
+                self.setting.isOpen = state.open
                 
                 dispatch_async(dispatch_get_main_queue()) {
-                    sender.setTitle(btnState, forState: UIControlState.Normal)
                     
-                    self.msgLastUser.text = "was the last person to " + strState + "."
+                    // Update the date to now.
+                    let date = NSDate()
+                    let formatter = NSDateFormatter()
+                    formatter.dateStyle = .LongStyle
+                    formatter.timeStyle = .LongStyle
+                    formatter.stringFromDate(date)
+                    
+                    self.msgLastDate.text = formatter.stringFromDate(self.setting.lastUsed)
+                    self.msgLastUser.text = "was the last person to " + state.str + "."
                     self.msgLastUserName.text = "You"
-                    self.msgLastDate.text = "Now"
-
                     self.setting.useCount++
                     self.msgUseCount.text = String(self.setting.useCount)
+                    
+                    sender.setTitle(state.btn, forState: UIControlState.Normal)
+                    
+                    self.setting.set({ (result) -> Void in })
                     
                     sender.enabled = true
                     self.spinner.hidden = true
                     
                 }
-                
-                if self.setting.isOpen == 0 {
-                    self.setting.isOpen == 1
-                } else {
-                    self.setting.isOpen == 0
-                }
-                
-                let defaults = NSUserDefaults.standardUserDefaults()
-                let name = defaults.stringForKey("name_preference")!
-                
-                httpPost("incrementuse", "") { (data, error) -> Void in }
-                httpPost("updatename", "args=" + name) { (data, error) -> Void in }
-                
             }
         }
+    }
+    
+    func GarageDoorState() -> (btn: String, str: String, open: Int){
+        
+        var btnState: String
+        var strState: String
+        var isOpen: Int
+        
+        if self.setting.isOpen == 0 {
+            btnState = "Close"
+            strState = "open"
+            isOpen = 1
+        } else {
+            btnState = "Open"
+            strState = "close"
+            isOpen = 0
+        }
+        
+        return (btnState, strState, isOpen)
+        
     }
     
     // Detect when the app coems back from the baground.

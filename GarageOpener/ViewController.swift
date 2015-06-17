@@ -13,73 +13,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
         // Check if the app was run for the first time
-        if let name = defaults.stringForKey("name_preference") {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey("userName") {
             
             httpGet("") { (data, error) -> Void in
                 
                 if error == nil {
                     
+                    // If we have the remote connected to the internets, 
+                    // then we can continue getting data and show the main interface.
                     if data["connected"] {
                         
-                        httpGet("username") { (data, error) -> Void in
-                            
-                            if error == nil {
-                                
-                                var setting = AppSettings.sharedInstance
-                                let userName:JSON = data["result"]
-                                let lastUsed:JSON = data["coreInfo"]["last_heard"]
+                        println("Particle is Connected")
+                        
+                        var settings = AppSettings.sharedInstance
 
-                                var dateFormatter = NSDateFormatter()
-                                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.zzz'Z'"
+                        settings.get({ (result) -> Void in
+                            println("Get - Response")
+                            
+                            dispatch_async(dispatch_get_main_queue()) {
+                                println("MainTransition")
                                 
-                                var date:NSDate = dateFormatter.dateFromString(lastUsed.string!)!
-                                
-                                setting.lastUser = userName.string!
-                                setting.lastUsed = date
-                                
-                                httpGet("isopen") { (data, error) -> Void in
-                                    
-                                    if error == nil {
-                                        
-                                        var setting = AppSettings.sharedInstance
-                                        let isOpen:JSON = data["result"]
-                                        
-                                        setting.isOpen = isOpen.int!
-                                        
-                                        httpGet("usecount") { (data, error) -> Void in
-                                            
-                                            if error == nil {
-                                                
-                                                var setting = AppSettings.sharedInstance
-                                                let useCount:JSON = data["result"]
-                                                
-                                                setting.useCount = useCount.int!
-                                                
-                                                dispatch_async(dispatch_get_main_queue()) {
-                                                    self.performSegueWithIdentifier("mainTransition", sender: self)
-                                                }
-                                                
-                                            }
-                                            else
-                                            {
-                                                println(error!.localizedDescription)
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        println(error!.localizedDescription)
-                                    }
-                                }
+                                self.performSegueWithIdentifier("mainTransition", sender: self)
                             }
-                            else
-                            {
-                                println(error!.localizedDescription)
-                            }
-                        }
+                        })
+                        
                     }
                     else
                     {
@@ -96,7 +55,6 @@ class ViewController: UIViewController {
         }
         else
         {
-            //UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
             dispatch_async(dispatch_get_main_queue()) {
                 self.performSegueWithIdentifier("firstLogin", sender: self)
             }

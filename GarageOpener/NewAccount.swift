@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 class NewAccount: UIViewController, UITextFieldDelegate {
     
@@ -21,12 +22,18 @@ class NewAccount: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        println(textField.text!)
+        let user = PFObject(className: "Users")
+        user["name"] = textField.text!
+        user.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(textField.text, forKey: "userName")
+            defaults.setValue(user.objectId!, forKey: "userID")
+            
+            self.performSegueWithIdentifier("backFromNewAccount", sender: self)
+
+        }
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setValue(textField.text, forKey: "name_preference")
-        self.performSegueWithIdentifier("backFromNewAccount", sender: self)
-    
         return true
     }
     
