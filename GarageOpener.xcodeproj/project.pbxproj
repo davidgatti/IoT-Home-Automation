@@ -36,6 +36,7 @@
 		E5DB28DE1B2DFFA000B3C093 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28DD1B2DFFA000B3C093 /* libsqlite3.dylib */; };
 		E5DB28E01B2DFFA800B3C093 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28DF1B2DFFA800B3C093 /* Accounts.framework */; };
 		E5DB28E21B2DFFAE00B3C093 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28E11B2DFFAE00B3C093 /* Social.framework */; };
+		E5DB28E61B31419000B3C093 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB28E51B31419000B3C093 /* Avatar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		E5DB28DD1B2DFFA000B3C093 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E5DB28DF1B2DFFA800B3C093 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E5DB28E11B2DFFAE00B3C093 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E5DB28E51B31419000B3C093 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E55C85B71B2CAF090063B75E /* NewAccount.swift */,
+				E5DB28E51B31419000B3C093 /* Avatar.swift */,
 				E59B08C81B22974F009B50D4 /* AppDelegate.swift */,
 				E59B08CD1B22974F009B50D4 /* ViewController.swift */,
 				E59B08F91B24E539009B50D4 /* MainViewController.swift */,
@@ -318,6 +321,7 @@
 				E59B08CE1B22974F009B50D4 /* ViewController.swift in Sources */,
 				E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */,
 				E55C85B81B2CAF090063B75E /* NewAccount.swift in Sources */,
+				E5DB28E61B31419000B3C093 /* Avatar.swift in Sources */,
 				E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */,
 				E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */,
 				E59B08F41B23FA6F009B50D4 /* Http.swift in Sources */,

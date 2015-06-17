@@ -19,6 +19,7 @@ class AppSettings {
     var useCount: Int = 0
     var lastUser: String = ""
     var lastUsed: NSDate = NSDate.distantPast() as! NSDate
+    var avatar: UIImage!
     var userID: String {
         get {
             var tmpUserID: String = ""
@@ -109,6 +110,10 @@ class AppSettings {
                 println("GetLastUser - qUser")
                 
                 self.lastUser = (name?.objectForKey("name") as? String)!
+                
+                if let file = name?.objectForKey("avatar") as? PFFile, data = file.getData() {
+                    self.avatar = UIImage(data: data)
+                }
 
                 self.getLastUsed(name!.createdAt!, completition: { () -> () in
                 

@@ -30,8 +30,9 @@ class NewAccount: UIViewController, UITextFieldDelegate {
             defaults.setValue(textField.text, forKey: "userName")
             defaults.setValue(user.objectId!, forKey: "userID")
             
-            self.performSegueWithIdentifier("backFromNewAccount", sender: self)
-
+            dispatch_async(dispatch_get_main_queue()) {
+                self.performSegueWithIdentifier("takePhotho", sender: self)
+            }
         }
         
         return true
