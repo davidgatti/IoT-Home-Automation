@@ -20,3 +20,13 @@ To add your own Device ID and Token. You have to add a plist to the project with
 - deviceID
 
 and of course add the appropriate value. Save the file and compile :)
+
+# How to add Parse Application ID and Client Key
+
+Well... you do it the same as you did with Particle. You add two new Keys to the Secrets.plist. In this case we are talkign about the following Keys names
+
+- ParseAppID
+- ParseClientID
+
+Of course you need an account on [Parse](http://parse.com) :)
+
