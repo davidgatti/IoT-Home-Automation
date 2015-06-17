@@ -1,12 +1,21 @@
 ![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/master/Assets/header.jpg "IoT Garage Opener")
 
 # IoT-Garage-Opener
-A simple project that uses a Particle to control a garage remote over the internet
+The problem: many people under on roof and just one remote for the garage. Solution? Connect the remote to the internets and write an iOS app to trigger the remote over the internet.
+
+It started as a simple project ;) and now you can:
+
+- Store the whole history of open and closes thanks to Parse.com
+- Store the amount of uses 
+- Store the state of the door
+- Detect if the physical remote was used, not yet saved on Parse.com
 
 # URLs
 
 - https://www.hackster.io/davidgatti/garage-opener
 - https://twitter.com/dawidgatti
+- parse.com
+- particle.io
 
 # How to add tokens and seecrets to the project
 
