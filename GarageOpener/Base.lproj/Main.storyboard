@@ -358,29 +358,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="5A7-0S-Kv7">
+                                <rect key="frame" x="175" y="28" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5A7-0S-Kv7" secondAttribute="height" multiplier="1:1" id="I1K-Sv-ZWa"/>
+                                    <constraint firstAttribute="width" constant="250" id="l38-53-SEf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgs-hm-iWF">
+                                <rect key="frame" x="281" y="412" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-D6-BxQ">
+                                <rect key="frame" x="253" y="413" width="20" height="20"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-pb-Pq2">
-                                <rect key="frame" x="277" y="397" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="196" y="320" width="86" height="30"/>
+                                <state key="normal" title="Take Photho">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="loadImageButtonTapped:" destination="97e-5r-ldm" eventType="touchUpInside" id="CeW-IO-4lh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5A7-0S-Kv7">
-                                <rect key="frame" x="133" y="28" width="334" height="305"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="334" id="VNt-nX-UmH"/>
-                                    <constraint firstAttribute="width" secondItem="5A7-0S-Kv7" secondAttribute="height" multiplier="334:305" id="bvb-uI-WR9"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t07-RV-odg">
+                                <rect key="frame" x="370" y="320" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadImageButtonTapped:" destination="97e-5r-ldm" eventType="touchUpInside" id="3l9-Ka-m9I"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a nice photho of yourselfe!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRS-mq-iWe">
+                                <rect key="frame" x="192" y="501" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bO7-pb-Pq2" firstAttribute="top" secondItem="5A7-0S-Kv7" secondAttribute="bottom" constant="64" id="0i2-EW-rEE"/>
-                            <constraint firstAttribute="centerX" secondItem="5A7-0S-Kv7" secondAttribute="centerX" id="DNf-6M-dE8"/>
-                            <constraint firstItem="5A7-0S-Kv7" firstAttribute="top" secondItem="ZXW-7r-ujr" secondAttribute="bottom" constant="8" id="n9E-rb-79j"/>
-                            <constraint firstItem="5A7-0S-Kv7" firstAttribute="centerX" secondItem="bO7-pb-Pq2" secondAttribute="centerX" id="ydV-bF-hNa"/>
+                            <constraint firstAttribute="centerX" secondItem="5A7-0S-Kv7" secondAttribute="centerX" id="88R-6z-plN"/>
+                            <constraint firstAttribute="centerX" secondItem="tRS-mq-iWe" secondAttribute="centerX" constant="-14" id="CNm-1K-d0m"/>
+                            <constraint firstItem="5A7-0S-Kv7" firstAttribute="leading" secondItem="bO7-pb-Pq2" secondAttribute="leading" constant="-21" id="CuM-wQ-oPz"/>
+                            <constraint firstItem="bEG-0i-H7l" firstAttribute="top" secondItem="wgs-hm-iWF" secondAttribute="bottom" constant="167" id="DpV-Gu-e3b"/>
+                            <constraint firstItem="yIT-D6-BxQ" firstAttribute="centerY" secondItem="wgs-hm-iWF" secondAttribute="centerY" constant="0.5" id="EA1-Yq-pLn"/>
+                            <constraint firstItem="bO7-pb-Pq2" firstAttribute="top" secondItem="5A7-0S-Kv7" secondAttribute="bottom" constant="42" id="F65-h3-c9U"/>
+                            <constraint firstItem="t07-RV-odg" firstAttribute="top" secondItem="5A7-0S-Kv7" secondAttribute="bottom" constant="42" id="eUL-Td-sTd"/>
+                            <constraint firstItem="t07-RV-odg" firstAttribute="trailing" secondItem="5A7-0S-Kv7" secondAttribute="trailing" constant="-21" id="hLL-Wt-lLD"/>
+                            <constraint firstAttribute="centerX" secondItem="wgs-hm-iWF" secondAttribute="centerX" constant="-14.5" id="iEc-4D-ppa"/>
+                            <constraint firstItem="bEG-0i-H7l" firstAttribute="top" secondItem="tRS-mq-iWe" secondAttribute="bottom" constant="78" id="oa3-ac-UWV"/>
+                            <constraint firstItem="5A7-0S-Kv7" firstAttribute="top" secondItem="ZXW-7r-ujr" secondAttribute="bottom" constant="8" id="vo6-vz-oKi"/>
+                            <constraint firstItem="wgs-hm-iWF" firstAttribute="leading" secondItem="yIT-D6-BxQ" secondAttribute="trailing" constant="8" id="zlO-4B-pn8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -395,8 +427,9 @@
     </scenes>
     <resources>
         <image name="Exlamation" width="268" height="369"/>
+        <image name="user" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6xX-b1-1Wd"/>
+        <segue reference="T6L-qn-MJu"/>
     </inferredMetricsTieBreakers>
 </document>
