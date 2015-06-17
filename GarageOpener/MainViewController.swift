@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var msgLastDate: UILabel!
     @IBOutlet weak var msgUseCount: UILabel!
     @IBOutlet weak var btnOC: UIButton!
+    @IBOutlet weak var avatar: UIImageView!
     
     var setting = AppSettings.sharedInstance
     
@@ -38,6 +39,7 @@ class MainViewController: UIViewController {
             self.msgLastUser.text = "was the last person to " + state.str + "."
             self.msgLastUserName.text = self.setting.lastUser
             self.msgUseCount.text = String(self.setting.useCount)
+            self.avatar.image = self.setting.avatar
             
             // Format and display the date based on the iPhone locale.
             let formatter = NSDateFormatter()

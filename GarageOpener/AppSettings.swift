@@ -20,6 +20,7 @@ class AppSettings {
     var lastUser: String = ""
     var lastUsed: NSDate = NSDate.distantPast() as! NSDate
     var userID: String = ""
+    var avatar: UIImage!
 
     //MARK: Secrets
     var ParticleToken: String = ""
@@ -104,6 +105,10 @@ class AppSettings {
                 println("GetLastUser - qUser")
                 
                 self.lastUser = (name?.objectForKey("name") as? String)!
+                
+                if let file = name?.objectForKey("avatar") as? PFFile, data = file.getData() {
+                    self.avatar = UIImage(data: data)
+                }
 
                 self.getLastUsed(name!.createdAt!, completition: { () -> () in
                 
