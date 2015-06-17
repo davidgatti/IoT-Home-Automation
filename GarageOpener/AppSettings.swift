@@ -31,7 +31,10 @@ class AppSettings {
     init() {
     
         let defaults = NSUserDefaults.standardUserDefaults()
-        self.userID = defaults.stringForKey("userID")!
+
+        if let userID = defaults.stringForKey("userID") {
+            self.userID = userID
+        }
         
         // Get the Token and Device ID for Particle
         var myDict: NSDictionary?
