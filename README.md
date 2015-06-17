@@ -8,25 +8,23 @@ A simple project that uses a Particle to control a garage remote over the intern
 - https://www.hackster.io/davidgatti/garage-opener
 - https://twitter.com/dawidgatti
 
-# How to add Particle Device ID and Token
+# How to add tokens and seecrets to the project
 
 ![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/master/Assets/How%20to%20add%20plist.gif "How to add plist in Xcode")
 
-Since this data is sensitive I had to make sure that I’m not releasing to the public the Token. Otherwise everybody would start to open and close my garage :) 
+In this project we are usign Particle and Parse. Two products that have cloud based services. For authntication they use tokesn and IDs. For safte reasons I can't attach thoes secrets to the proejct. Thus the requirment of the `Secrets.plist` file. 
 
-To add your own Device ID and Token. You have to add a plist to the project with two String Keys. Named:
+The gif above shows you how to add key to the `plist` file. 
 
-- token
-- deviceID
+For Particle you will need the following keys
 
-and of course add the appropriate value. Save the file and compile :)
+- ParticleToken
+- ParticleDeviceID
 
-# How to add Parse Application ID and Client Key
-
-Well... you do it the same as you did with Particle. You add two new Keys to the Secrets.plist. In this case we are talkign about the following Keys names
+For Parse you will need the following keys
 
 - ParseAppID
 - ParseClientID
 
-Of course you need an account on [Parse](http://parse.com) :)
+Save, compile and enjoy :)
 
