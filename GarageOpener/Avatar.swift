@@ -13,6 +13,10 @@ import Parse
 class Avatar: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Outlets
+    @IBOutlet weak var msgSaving: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var btnSaveImage: UIButton!
+    @IBOutlet weak var btnTakePhotho: UIButton!
     @IBOutlet var imageView: UIImageView!
     
     //MARK: Constant
@@ -21,7 +25,9 @@ class Avatar: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println("I'm Here")
         imagePicker.delegate = self
+        
     }
     
     //MARK: Actions
@@ -40,24 +46,31 @@ class Avatar: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
             imageView.contentMode = .ScaleAspectFit
             imageView.image = pickedImage
-            
-            let defaults = NSUserDefaults.standardUserDefaults()
-            
-            let userID = defaults.stringForKey("userID")
-            
-            let imageData = UIImagePNGRepresentation(pickedImage)
-            let imageFile:PFFile = PFFile(data: imageData)
-
-            var query = PFObject(withoutDataWithClassName: "Users", objectId: userID)
-            query["avatar"] = imageFile
-            query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                self.performSegueWithIdentifier("backFromNewAccount", sender: self)            
-            }
-            
+        
         }
         
         dismissViewControllerAnimated(true, completion: nil)
 
+    }
+    
+    @IBAction func saveImage(sender: AnyObject) {
+        
+        spinner.hidden = false
+        msgSaving.hidden = false
+        btnSaveImage.enabled = false
+        btnTakePhotho.enabled = false
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let userID = defaults.stringForKey("userID")
+        
+        let imageData = UIImagePNGRepresentation(imageView.image)
+        let imageFile:PFFile = PFFile(data: imageData)
+        
+        var query = PFObject(withoutDataWithClassName: "Users", objectId: userID)
+        query["avatar"] = imageFile
+        query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            self.performSegueWithIdentifier("backFromNewAccount", sender: self)
+        }
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

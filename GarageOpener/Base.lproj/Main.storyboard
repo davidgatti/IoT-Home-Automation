@@ -365,13 +365,13 @@
                                     <constraint firstAttribute="width" constant="250" id="l38-53-SEf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgs-hm-iWF">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgs-hm-iWF">
                                 <rect key="frame" x="281" y="412" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-D6-BxQ">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-D6-BxQ">
                                 <rect key="frame" x="253" y="413" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-pb-Pq2">
@@ -389,20 +389,20 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loadImageButtonTapped:" destination="97e-5r-ldm" eventType="touchUpInside" id="3l9-Ka-m9I"/>
+                                    <action selector="saveImage:" destination="97e-5r-ldm" eventType="touchUpInside" id="T3h-NQ-lAz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a nice photho of yourselfe!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRS-mq-iWe">
-                                <rect key="frame" x="192" y="501" width="244" height="21"/>
+                                <rect key="frame" x="178" y="501" width="244" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="5A7-0S-Kv7" secondAttribute="centerX" id="88R-6z-plN"/>
-                            <constraint firstAttribute="centerX" secondItem="tRS-mq-iWe" secondAttribute="centerX" constant="-14" id="CNm-1K-d0m"/>
+                            <constraint firstAttribute="centerX" secondItem="tRS-mq-iWe" secondAttribute="centerX" id="CNm-1K-d0m"/>
                             <constraint firstItem="5A7-0S-Kv7" firstAttribute="leading" secondItem="bO7-pb-Pq2" secondAttribute="leading" constant="-21" id="CuM-wQ-oPz"/>
                             <constraint firstItem="bEG-0i-H7l" firstAttribute="top" secondItem="wgs-hm-iWF" secondAttribute="bottom" constant="167" id="DpV-Gu-e3b"/>
                             <constraint firstItem="yIT-D6-BxQ" firstAttribute="centerY" secondItem="wgs-hm-iWF" secondAttribute="centerY" constant="0.5" id="EA1-Yq-pLn"/>
@@ -416,7 +416,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSaveImage" destination="t07-RV-odg" id="YxZ-Ok-w2g"/>
+                        <outlet property="btnTakePhotho" destination="bO7-pb-Pq2" id="rN7-9u-O5z"/>
                         <outlet property="imageView" destination="5A7-0S-Kv7" id="U2R-sP-u9s"/>
+                        <outlet property="msgSaving" destination="wgs-hm-iWF" id="dhx-xo-Fa0"/>
+                        <outlet property="spinner" destination="yIT-D6-BxQ" id="0e0-in-NH2"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backFromNewAccount" id="T6L-qn-MJu"/>
                     </connections>
                 </viewController>
