@@ -17,7 +17,7 @@ It started as a simple project ;) and now you can:
 - http://parse.com
 - http://particle.io
 
-# How to add tokens and seecrets to the project
+# How to add seecrets to the project
 
 ![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/master/Assets/How%20to%20add%20plist.gif "How to add plist in Xcode")
 
