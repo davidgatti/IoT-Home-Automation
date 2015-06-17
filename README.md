@@ -14,8 +14,8 @@ It started as a simple project ;) and now you can:
 
 - https://www.hackster.io/davidgatti/garage-opener
 - https://twitter.com/dawidgatti
-- parse.com
-- particle.io
+- http://parse.com
+- http://particle.io
 
 # How to add tokens and seecrets to the project
 
