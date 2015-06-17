@@ -19,7 +19,18 @@ class AppSettings {
     var useCount: Int = 0
     var lastUser: String = ""
     var lastUsed: NSDate = NSDate.distantPast() as! NSDate
-    var userID: String = ""
+    var userID: String {
+        get {
+            var tmpUserID: String = ""
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let userID = defaults.stringForKey("userID") {
+                tmpUserID = userID
+            }
+            
+            return tmpUserID
+        }
+    }
 
     //MARK: Secrets
     var ParticleToken: String = ""
@@ -29,12 +40,6 @@ class AppSettings {
     
     //MARK: Initialization
     init() {
-    
-        let defaults = NSUserDefaults.standardUserDefaults()
-
-        if let userID = defaults.stringForKey("userID") {
-            self.userID = userID
-        }
         
         // Get the Token and Device ID for Particle
         var myDict: NSDictionary?
