@@ -164,7 +164,7 @@ class AppSettings {
     private func setHistory(completition: (result: String) -> Void) {
         let history = PFObject(className: "History")
         history["userID"] = self.userID
-        history["object"] = 1
+        history["applianceID"] = "eX9QCJGga5"
         history["state"] = self.isOpen
         history.saveInBackground()
     }
