@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,20 +25,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="irn-UJ-D1g">
-                                <rect key="frame" x="290" y="318" width="20" height="20"/>
+                                <rect key="frame" x="234" y="290" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="irn-UJ-D1g" firstAttribute="top" secondItem="tZw-ld-opE" secondAttribute="bottom" constant="8" symbolic="YES" id="OOs-St-Y1S"/>
-                            <constraint firstItem="irn-UJ-D1g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oPr-kY-gXy"/>
-                            <constraint firstItem="irn-UJ-D1g" firstAttribute="centerX" secondItem="tZw-ld-opE" secondAttribute="centerX" id="pns-8F-QIt"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="irn-UJ-D1g" secondAttribute="bottom" constant="262" id="xm8-ny-egz"/>
+                            <constraint firstItem="tZw-ld-opE" firstAttribute="centerY" secondItem="irn-UJ-D1g" secondAttribute="centerY" id="1yy-Pe-FJN"/>
+                            <constraint firstItem="tZw-ld-opE" firstAttribute="leading" secondItem="irn-UJ-D1g" secondAttribute="trailing" constant="8" id="C3I-JJ-DUk"/>
+                            <constraint firstAttribute="centerX" secondItem="tZw-ld-opE" secondAttribute="centerX" constant="-0.5" id="S48-ke-uaU"/>
+                            <constraint firstAttribute="centerY" secondItem="tZw-ld-opE" secondAttribute="centerY" constant="0.5" id="hrA-oG-VC7"/>
                         </constraints>
                     </view>
                     <connections>
                         <segue destination="FSm-nB-S9g" kind="show" identifier="errorTransition" id="yAy-55-Waf"/>
-                        <segue destination="nz9-he-jL5" kind="show" identifier="mainTransition" id="Fon-cm-eky"/>
+                        <segue destination="nz9-he-jL5" kind="show" identifier="garageDoor" id="Fon-cm-eky"/>
                         <segue destination="YKJ-TQ-sKz" kind="show" identifier="firstLogin" id="fqz-71-ooW"/>
                     </connections>
                 </viewController>
@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="1123" y="271"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Garage Door View Controller-->
         <scene sceneID="uNC-vy-ufo">
             <objects>
-                <viewController id="nz9-he-jL5" customClass="MainViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nz9-he-jL5" customClass="GarageDoorViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="brS-Sd-NLU"/>
                         <viewControllerLayoutGuide type="bottom" id="Urr-9Z-5V8"/>
@@ -289,10 +289,10 @@
             </objects>
             <point key="canvasLocation" x="1123" y="-491"/>
         </scene>
-        <!--New Account-->
+        <!--New Account View Controller-->
         <scene sceneID="FUS-Lv-Pi0">
             <objects>
-                <viewController id="YKJ-TQ-sKz" customClass="NewAccount" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YKJ-TQ-sKz" customClass="NewAccountViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ICA-F1-y7P"/>
                         <viewControllerLayoutGuide type="bottom" id="Uuz-0p-L6G"/>
@@ -346,10 +346,10 @@
             </objects>
             <point key="canvasLocation" x="322" y="1089"/>
         </scene>
-        <!--Avatar-->
+        <!--Avatar View Controller-->
         <scene sceneID="oV4-n4-yYl">
             <objects>
-                <viewController id="97e-5r-ldm" customClass="Avatar" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="97e-5r-ldm" customClass="AvatarViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZXW-7r-ujr"/>
                         <viewControllerLayoutGuide type="bottom" id="bEG-0i-H7l"/>
@@ -434,6 +434,6 @@
         <image name="user" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T6L-qn-MJu"/>
+        <segue reference="6xX-b1-1Wd"/>
     </inferredMetricsTieBreakers>
 </document>

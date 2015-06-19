@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E55C85B81B2CAF090063B75E /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C85B71B2CAF090063B75E /* NewAccount.swift */; };
+		E55C85B81B2CAF090063B75E /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */; };
 		E575BDF51B2B5B5F00457AE8 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = E575BDF41B2B5B5F00457AE8 /* Secrets.plist */; };
 		E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08C81B22974F009B50D4 /* AppDelegate.swift */; };
 		E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E59B08CA1B22974F009B50D4 /* GarageOpener.xcdatamodeld */; };
-		E59B08CE1B22974F009B50D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08CD1B22974F009B50D4 /* ViewController.swift */; };
+		E59B08CE1B22974F009B50D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08CD1B22974F009B50D4 /* MainViewController.swift */; };
 		E59B08D11B22974F009B50D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59B08CF1B22974F009B50D4 /* Main.storyboard */; };
 		E59B08D31B22974F009B50D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59B08D21B22974F009B50D4 /* Images.xcassets */; };
 		E59B08D61B22974F009B50D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59B08D41B22974F009B50D4 /* LaunchScreen.xib */; };
 		E59B08E21B22974F009B50D4 /* GarageOpenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08E11B22974F009B50D4 /* GarageOpenerTests.swift */; };
 		E59B08F41B23FA6F009B50D4 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08F31B23FA6F009B50D4 /* Http.swift */; };
 		E59B08F61B24B94B009B50D4 /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08F51B24B94B009B50D4 /* SwiftJSON.swift */; };
-		E59B08FA1B24E539009B50D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08F91B24E539009B50D4 /* MainViewController.swift */; };
+		E59B08FA1B24E539009B50D4 /* GarageDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08F91B24E539009B50D4 /* GarageDoorViewController.swift */; };
 		E5D36DF41B24FE19004B675F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5D36DF31B24FE19004B675F /* Settings.bundle */; };
 		E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36DF51B2644A9004B675F /* AppSettings.swift */; };
 		E5DB28C61B2DFE6600B3C093 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28C51B2DFE6600B3C093 /* Bolts.framework */; };
@@ -36,7 +36,7 @@
 		E5DB28DE1B2DFFA000B3C093 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28DD1B2DFFA000B3C093 /* libsqlite3.dylib */; };
 		E5DB28E01B2DFFA800B3C093 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28DF1B2DFFA800B3C093 /* Accounts.framework */; };
 		E5DB28E21B2DFFAE00B3C093 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28E11B2DFFAE00B3C093 /* Social.framework */; };
-		E5DB28E61B31419000B3C093 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB28E51B31419000B3C093 /* Avatar.swift */; };
+		E5DB28E61B31419000B3C093 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB28E51B31419000B3C093 /* AvatarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,13 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E55C85B71B2CAF090063B75E /* NewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
+		E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		E575BDF41B2B5B5F00457AE8 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		E59B08C31B22974F009B50D4 /* GarageOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59B08C71B22974F009B50D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E59B08C81B22974F009B50D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E59B08CB1B22974F009B50D4 /* GarageOpener.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GarageOpener.xcdatamodel; sourceTree = "<group>"; };
-		E59B08CD1B22974F009B50D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E59B08CD1B22974F009B50D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E59B08D01B22974F009B50D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E59B08D21B22974F009B50D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E59B08D51B22974F009B50D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		E59B08E11B22974F009B50D4 /* GarageOpenerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageOpenerTests.swift; sourceTree = "<group>"; };
 		E59B08F31B23FA6F009B50D4 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		E59B08F51B24B94B009B50D4 /* SwiftJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
-		E59B08F91B24E539009B50D4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E59B08F91B24E539009B50D4 /* GarageDoorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageDoorViewController.swift; sourceTree = "<group>"; };
 		E5D36DF31B24FE19004B675F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E5D36DF51B2644A9004B675F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		E5DB28C51B2DFE6600B3C093 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		E5DB28DD1B2DFFA000B3C093 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E5DB28DF1B2DFFA800B3C093 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E5DB28E11B2DFFAE00B3C093 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		E5DB28E51B31419000B3C093 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		E5DB28E51B31419000B3C093 /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,13 +140,9 @@
 		E59B08C51B22974F009B50D4 /* GarageOpener */ = {
 			isa = PBXGroup;
 			children = (
-				E55C85B71B2CAF090063B75E /* NewAccount.swift */,
-				E5DB28E51B31419000B3C093 /* Avatar.swift */,
+				E5CC37DB1B3484AF00FE8F18 /* Helpers */,
+				E5E8BE901B34C18C006EB7D7 /* ViewControllers */,
 				E59B08C81B22974F009B50D4 /* AppDelegate.swift */,
-				E59B08CD1B22974F009B50D4 /* ViewController.swift */,
-				E59B08F91B24E539009B50D4 /* MainViewController.swift */,
-				E59B08F31B23FA6F009B50D4 /* Http.swift */,
-				E5D36DF51B2644A9004B675F /* AppSettings.swift */,
 				E59B08CF1B22974F009B50D4 /* Main.storyboard */,
 				E59B08C61B22974F009B50D4 /* Supporting Files */,
 			);
@@ -186,6 +182,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E5CC37DB1B3484AF00FE8F18 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E59B08F31B23FA6F009B50D4 /* Http.swift */,
+				E5D36DF51B2644A9004B675F /* AppSettings.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		E5DB28E31B30EE1900B3C093 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +218,17 @@
 				E5DB28C71B2DFE7100B3C093 /* Parse.framework */,
 			);
 			name = ParseSDK;
+			sourceTree = "<group>";
+		};
+		E5E8BE901B34C18C006EB7D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5DB28E51B31419000B3C093 /* AvatarViewController.swift */,
+				E59B08CD1B22974F009B50D4 /* MainViewController.swift */,
+				E59B08F91B24E539009B50D4 /* GarageDoorViewController.swift */,
+				E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,15 +334,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E59B08CE1B22974F009B50D4 /* ViewController.swift in Sources */,
+				E59B08CE1B22974F009B50D4 /* MainViewController.swift in Sources */,
 				E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */,
-				E55C85B81B2CAF090063B75E /* NewAccount.swift in Sources */,
-				E5DB28E61B31419000B3C093 /* Avatar.swift in Sources */,
+				E55C85B81B2CAF090063B75E /* NewAccountViewController.swift in Sources */,
+				E5DB28E61B31419000B3C093 /* AvatarViewController.swift in Sources */,
 				E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */,
 				E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */,
 				E59B08F41B23FA6F009B50D4 /* Http.swift in Sources */,
 				E59B08F61B24B94B009B50D4 /* SwiftJSON.swift in Sources */,
-				E59B08FA1B24E539009B50D4 /* MainViewController.swift in Sources */,
+				E59B08FA1B24E539009B50D4 /* GarageDoorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

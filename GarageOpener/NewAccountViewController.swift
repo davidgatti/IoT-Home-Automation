@@ -10,25 +10,27 @@ import Foundation
 import UIKit
 import Parse
 
-class NewAccount: UIViewController, UITextFieldDelegate {
+class NewAccountViewController: UIViewController, UITextFieldDelegate {
+    
+    var tmpUserID: String?
+    var tmpUserName: String?
     
     @IBOutlet weak var txtName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         txtName.delegate = self;
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         let user = PFObject(className: "Users")
+
         user["name"] = textField.text!
         user.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setValue(textField.text, forKey: "userName")
-            defaults.setValue(user.objectId!, forKey: "userID")
+            self.tmpUserName = textField.text
+            self.tmpUserID = user.objectId!
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.performSegueWithIdentifier("takePhotho", sender: self)
@@ -37,5 +39,12 @@ class NewAccount: UIViewController, UITextFieldDelegate {
         
         return true
     }
-    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var desitnationView: AvatarViewController = segue.destinationViewController as! AvatarViewController
+        
+        desitnationView.userID = self.tmpUserID
+        desitnationView.userName = self.tmpUserName
+    }
 }
