@@ -120,8 +120,8 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             let defaults = NSUserDefaults.standardUserDefaults()
             
-            defaults.setValue(self.userID, forKey: "userName")
-            defaults.setValue(self.userName, forKey: "userID")
+            defaults.setValue(self.userID, forKey: "userID")
+            defaults.setValue(self.userName, forKey: "userName")
             
             self.performSegueWithIdentifier("backFromNewAccount", sender: self)
         }
