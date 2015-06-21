@@ -72,17 +72,13 @@ class AppSettings {
     
     func get(completition:() -> ()) {
         
-        println("get")
-        
         var count: Int = 0
         
         getLastUser { (result) -> Void in
-            println("GetLastUser - result")
             count++
         }
         
         getUseCount { (result) -> Void in
-            println("GetUserCount - result")
             count++
         }
         
@@ -94,20 +90,15 @@ class AppSettings {
     }
     
     private func getLastUser(completition:() -> ()) {
-        println("GetLastUser - Header")
         
         var qHistory = PFQuery(className: "History")
         qHistory.orderByDescending("createdAt")
         qHistory.getFirstObjectInBackgroundWithBlock { (lastEntry: PFObject?, error) -> Void in
             
-            println("GetLastUser - qHistory")
-            
             var qUser = PFQuery(className: "Users")
             
             qUser.getObjectInBackgroundWithId((lastEntry?.objectForKey("userID") as? String)!) {
                 (name: PFObject?, error) -> Void in
-                
-                println("GetLastUser - qUser")
                 
                 self.lastUser = (name?.objectForKey("name") as? String)!
                 
@@ -119,31 +110,20 @@ class AppSettings {
                 
                     return completition()
                 })
-                
-                
             }
         }
-        
-        println("GetLastUser - Footer")
-        
-        
-        
     }
     
     private func getUseCount(completition:() -> ()) {
-        println("GetUserCount - Header")
         
         var qGarageDoor = PFQuery(className:"GarageDoor")
         qGarageDoor.getObjectInBackgroundWithId("eX9QCJGga5") { (garage: PFObject?, error: NSError?) -> Void in
             self.useCount = (garage!.objectForKey("useCount") as! Int)
             return completition()
         }
-        
-
     }
     
     private func getLastUsed(time: NSDate, completition:() -> ()) {
-        println("GetLastUsed - Header")
         
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.zzz'Z'"
