@@ -38,7 +38,9 @@ class MainViewController: UIViewController {
                     else
                     {
                         dispatch_async(dispatch_get_main_queue()) {
-                            self.performSegueWithIdentifier("errorTransition", sender: self)
+                            let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                            let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("errorView") as! UIViewController
+                            self.presentViewController(vc, animated: true, completion: nil)
                         }
                     }
                 }
