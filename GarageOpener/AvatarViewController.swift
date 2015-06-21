@@ -114,16 +114,19 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imageFile:PFFile = PFFile(data: imageData)
         
         // Making a Parse query
-        var query = PFObject(withoutDataWithClassName: "Users", objectId: userID)
-        query["avatar"] = imageFile
-        query.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        let user = PFObject(className: "Users")
+        
+        user["name"] = self.userName!
+        user["avatar"] = imageFile
+        user.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
             let defaults = NSUserDefaults.standardUserDefaults()
             
-            defaults.setValue(self.userID, forKey: "userID")
+            defaults.setValue(user.objectId!, forKey: "userID")
             defaults.setValue(self.userName, forKey: "userName")
             
             self.performSegueWithIdentifier("backFromNewAccount", sender: self)
+ 
         }
     }
 }
