@@ -1,4 +1,4 @@
-![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/assets/Assets/header.jpg "IoT Garage Opener")
+![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/assets/Images/header.jpg "IoT Garage Opener")
 
 # IoT-Garage-Opener
 The problem: many people under on roof and just one remote for the garage. Solution? Connect the remote to the internets and write an iOS app to trigger the remote over the internet.
@@ -19,7 +19,7 @@ It started as a simple project ;) and now you can:
 
 # How to add seecrets to the project
 
-![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/assets/Assets/How%20to%20add%20plist.gif "How to add plist in Xcode")
+![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/assets/Images/How%20to%20add%20plist.gif "How to add plist in Xcode")
 
 In this project we are usign Particle and Parse. Two products that have cloud based services. For authntication they use tokesn and IDs. For safte reasons I can't attach thoes secrets to the proejct. Thus the requirment of the `Secrets.plist` file. 
 
