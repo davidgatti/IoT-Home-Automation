@@ -13,6 +13,9 @@ import Parse
 class NewAccountViewController: UIViewController, UITextFieldDelegate {
     
     var tmpUserName: String?
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var tfPasswordRepeat: UITextField!
     
     @IBOutlet weak var txtName: UITextField!
     
@@ -31,6 +34,10 @@ class NewAccountViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    @IBAction func nextAddPhotho(sender: AnyObject) {
+    
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         var desitnationView: AvatarViewController = segue.destinationViewController as! AvatarViewController
