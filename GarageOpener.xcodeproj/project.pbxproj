@@ -145,7 +145,6 @@
 				E5CC37DB1B3484AF00FE8F18 /* Helpers */,
 				E5E8BE901B34C18C006EB7D7 /* ViewControllers */,
 				E59B08C81B22974F009B50D4 /* AppDelegate.swift */,
-				E59B08CF1B22974F009B50D4 /* Main.storyboard */,
 				E59B08C61B22974F009B50D4 /* Supporting Files */,
 			);
 			path = GarageOpener;
@@ -225,6 +224,7 @@
 		E5E8BE901B34C18C006EB7D7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E59B08CF1B22974F009B50D4 /* Main.storyboard */,
 				E5DB28E51B31419000B3C093 /* AvatarViewController.swift */,
 				E59B08CD1B22974F009B50D4 /* MainViewController.swift */,
 				E59B08F91B24E539009B50D4 /* GarageDoorViewController.swift */,
