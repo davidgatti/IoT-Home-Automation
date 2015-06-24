@@ -252,21 +252,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-7s-0Qg">
-                                <rect key="frame" x="169" y="285" width="263" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="263" id="Pvv-Cr-Mft"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Garage Opener" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-BJ-vNj">
                                 <rect key="frame" x="178" y="58" width="246" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, before you start, you have to tell us your name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbT-pd-7IY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, before you start, you have to create an account" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbT-pd-7IY">
                                 <rect key="frame" x="177" y="96" width="248" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="248" id="Fnp-4a-o0O"/>
@@ -275,14 +267,42 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-Mp-T1n">
+                                <rect key="frame" x="169" y="244" width="263" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="WYa-Nu-3FG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-Tm-jOz">
+                                <rect key="frame" x="169" y="282" width="263" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="y2X-CI-bca"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-7s-0Qg">
+                                <rect key="frame" x="169" y="206" width="263" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="Pvv-Cr-Mft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WgK-BJ-vNj" firstAttribute="top" secondItem="ICA-F1-y7P" secondAttribute="bottom" constant="38" id="7nP-Mt-8rJ"/>
                             <constraint firstItem="qbT-pd-7IY" firstAttribute="top" secondItem="WgK-BJ-vNj" secondAttribute="bottom" constant="8" id="ABV-Fm-2ya"/>
-                            <constraint firstItem="Vh0-7s-0Qg" firstAttribute="top" secondItem="qbT-pd-7IY" secondAttribute="bottom" constant="146" id="Zga-Xi-clf"/>
+                            <constraint firstItem="Vh0-7s-0Qg" firstAttribute="centerX" secondItem="TxQ-Mp-T1n" secondAttribute="centerX" id="YvK-af-ksW"/>
+                            <constraint firstItem="Vh0-7s-0Qg" firstAttribute="top" secondItem="qbT-pd-7IY" secondAttribute="bottom" constant="67" id="Zga-Xi-clf"/>
                             <constraint firstAttribute="centerX" secondItem="WgK-BJ-vNj" secondAttribute="centerX" constant="-0.5" id="ggM-Qr-4Tm"/>
                             <constraint firstItem="qbT-pd-7IY" firstAttribute="centerX" secondItem="WgK-BJ-vNj" secondAttribute="centerX" id="h4E-mQ-m33"/>
+                            <constraint firstItem="Utm-Tm-jOz" firstAttribute="top" secondItem="TxQ-Mp-T1n" secondAttribute="bottom" constant="8" id="mIb-iA-ahD"/>
+                            <constraint firstItem="TxQ-Mp-T1n" firstAttribute="centerX" secondItem="Utm-Tm-jOz" secondAttribute="centerX" id="mS1-Rs-pKg"/>
+                            <constraint firstItem="TxQ-Mp-T1n" firstAttribute="top" secondItem="Vh0-7s-0Qg" secondAttribute="bottom" constant="8" id="p7l-8e-HMd"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Vh0-7s-0Qg" secondAttribute="trailing" constant="152" id="uOJ-Tv-oAk"/>
                             <constraint firstItem="Vh0-7s-0Qg" firstAttribute="leading" relation="lessThanOrEqual" secondItem="7d6-WF-vIH" secondAttribute="leadingMargin" constant="153" id="x5b-EV-VQl"/>
                             <constraint firstItem="qbT-pd-7IY" firstAttribute="centerX" secondItem="Vh0-7s-0Qg" secondAttribute="centerX" id="xEF-PZ-ujU"/>
