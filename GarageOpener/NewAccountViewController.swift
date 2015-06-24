@@ -10,38 +10,29 @@ import Foundation
 import UIKit
 import Parse
 
-class NewAccountViewController: UIViewController, UITextFieldDelegate {
+class NewAccountViewController: UIViewController {
     
     var tmpUserName: String?
+    @IBOutlet weak var tfname: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var tfPasswordRepeat: UITextField!
-    
-    @IBOutlet weak var txtName: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        txtName.delegate = self;
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        self.tmpUserName = textField.text
-        
-        self.performSegueWithIdentifier("takePhotho", sender: self)
-        
-        return true
     }
 
     @IBAction func nextAddPhotho(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("takePhotho", sender: self)
     
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         var desitnationView: AvatarViewController = segue.destinationViewController as! AvatarViewController
-        
-        desitnationView.userName = self.tmpUserName
+
+        desitnationView.userName = self.tfname.text
+        desitnationView.userEmail = self.tfEmail.text
+        desitnationView.userPassword = self.tfPassword.text
     }
 }

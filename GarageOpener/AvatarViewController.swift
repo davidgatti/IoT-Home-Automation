@@ -16,6 +16,8 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
     //MARK: Variable
     var userID: String!
     var userName: String!
+    var userEmail: String!
+    var userPassword: String!
     
     //MARK: Constant
     let imagePicker = UIImagePickerController()
@@ -43,10 +45,12 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     func resizeImage(image: UIImage, newSize: CGSize) -> (UIImage) {
+        
         let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
         let imageRef = image.CGImage
         
@@ -111,22 +115,30 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imageData = UIImageJPEGRepresentation(smallImage, 1.0)
         
         // Converting the image in to a Pars file
-        let imageFile:PFFile = PFFile(data: imageData)
+        let imageFile:PFFile = PFFile(name: self.userName + ".jpg", data: imageData)
         
         // Making a Parse query
-        let user = PFObject(className: "Users")
+        let user = PFUser()
+        user.email = self.userEmail
+        user.password = self.userPassword
+        user.setObject(imageData, forKey: "profilePhotho")
         
-        user["name"] = self.userName!
-        user["avatar"] = imageFile
-        user.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        user.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            
-            defaults.setValue(user.objectId!, forKey: "userID")
-            defaults.setValue(self.userName, forKey: "userName")
-            
-            self.performSegueWithIdentifier("backFromNewAccount", sender: self)
- 
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? NSString
+
+                println(errorString)
+                
+            } else {
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                
+                defaults.setValue(user.objectId!, forKey: "userID")
+                defaults.setValue(self.userName, forKey: "userName")
+                
+                self.performSegueWithIdentifier("backFromNewAccount", sender: self)
+            }
         }
     }
 }

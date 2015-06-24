@@ -267,7 +267,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-Mp-T1n">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-Mp-T1n">
                                 <rect key="frame" x="169" y="244" width="263" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="263" id="WYa-Nu-3FG"/>
@@ -275,15 +275,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-Tm-jOz">
-                                <rect key="frame" x="169" y="282" width="263" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="263" id="y2X-CI-bca"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-7s-0Qg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-7s-0Qg">
                                 <rect key="frame" x="169" y="206" width="263" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="263" id="Pvv-Cr-Mft"/>
@@ -300,6 +292,14 @@
                                     <action selector="nextAddPhotho:" destination="YKJ-TQ-sKz" eventType="touchUpInside" id="qfd-hP-Tzo"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-Tm-jOz">
+                                <rect key="frame" x="169" y="282" width="263" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="y2X-CI-bca"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -320,16 +320,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tfEmail" destination="Vh0-7s-0Qg" id="kTD-LP-ofi"/>
-                        <outlet property="tfPassword" destination="TxQ-Mp-T1n" id="8YS-kD-I6P"/>
-                        <outlet property="tfPasswordRepeat" destination="Utm-Tm-jOz" id="fdC-gy-weV"/>
-                        <outlet property="txtName" destination="Vh0-7s-0Qg" id="YLR-i9-EpG"/>
+                        <outlet property="tfEmail" destination="TxQ-Mp-T1n" id="Yii-tA-qUu"/>
+                        <outlet property="tfPassword" destination="Utm-Tm-jOz" id="t4J-gL-9Aj"/>
+                        <outlet property="tfname" destination="Vh0-7s-0Qg" id="OxX-5n-Rqx"/>
                         <segue destination="97e-5r-ldm" kind="show" identifier="takePhotho" id="7Kh-tE-ahU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zne-vN-V6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="1161"/>
+            <point key="canvasLocation" x="215" y="1991"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="oV4-n4-yYl">
@@ -411,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wr4-WP-36j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="1935"/>
+            <point key="canvasLocation" x="215" y="2737"/>
         </scene>
     </scenes>
     <resources>
@@ -419,6 +418,6 @@
         <image name="user" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AbP-wU-hHH"/>
+        <segue reference="T6L-qn-MJu"/>
     </inferredMetricsTieBreakers>
 </document>
