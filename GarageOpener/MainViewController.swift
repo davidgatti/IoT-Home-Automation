@@ -58,7 +58,10 @@ class MainViewController: UIViewController {
             if let name = defaults.stringForKey("userID") {
                 
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.performSegueWithIdentifier("Login", sender: self)
+
+                        self.performSegueWithIdentifier("Login", sender: self)
+
+
                 }
                 
             } else {

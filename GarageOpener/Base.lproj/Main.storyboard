@@ -183,6 +183,15 @@
                                     <action selector="openclose:" destination="nz9-he-jL5" eventType="touchUpInside" id="tDd-Kf-Ca4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnG-2h-6eF">
+                                <rect key="frame" x="16" y="550" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="nz9-he-jL5" eventType="touchUpInside" id="cWi-k7-D1b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -200,6 +209,7 @@
                             <constraint firstItem="2KY-8F-xuH" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="WFw-dR-2f8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8BE-Gu-dGM" secondAttribute="trailing" id="a0f-RV-xAw"/>
                             <constraint firstItem="m3g-QO-Gpx" firstAttribute="top" secondItem="t80-wh-JG9" secondAttribute="bottom" constant="8" symbolic="YES" id="cby-sg-EOd"/>
+                            <constraint firstItem="Urr-9Z-5V8" firstAttribute="top" secondItem="UnG-2h-6eF" secondAttribute="bottom" constant="20" id="e0p-s9-ZF5"/>
                             <constraint firstItem="t80-wh-JG9" firstAttribute="centerX" secondItem="8BE-Gu-dGM" secondAttribute="centerX" id="gVo-QK-3AT"/>
                             <constraint firstItem="8BE-Gu-dGM" firstAttribute="top" secondItem="OKL-8d-6Q7" secondAttribute="bottom" constant="35" id="gdt-dh-lSB"/>
                             <constraint firstAttribute="trailing" secondItem="ati-7O-oBe" secondAttribute="trailing" constant="10" id="hc7-9w-E9w"/>
@@ -209,6 +219,7 @@
                             <constraint firstItem="D3i-v8-l0w" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="p4M-YA-xkY"/>
                             <constraint firstItem="2KY-8F-xuH" firstAttribute="top" secondItem="D3i-v8-l0w" secondAttribute="bottom" constant="17" id="q4V-S2-aAq"/>
                             <constraint firstItem="2KY-8F-xuH" firstAttribute="leading" secondItem="OKL-8d-6Q7" secondAttribute="trailing" constant="8" id="uSd-2O-1i9"/>
+                            <constraint firstItem="UnG-2h-6eF" firstAttribute="leading" secondItem="Dz5-Wm-XfG" secondAttribute="leadingMargin" id="xFd-Dq-mtC"/>
                             <constraint firstItem="Urr-9Z-5V8" firstAttribute="top" secondItem="ati-7O-oBe" secondAttribute="bottom" constant="10" id="zA1-Xe-Mbg"/>
                         </constraints>
                         <variation key="default">
@@ -245,7 +256,7 @@
         <!--Login View Controller-->
         <scene sceneID="dHx-qg-hgL">
             <objects>
-                <viewController id="JM6-Rz-b8u" customClass="LoginViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="JM6-Rz-b8u" customClass="LoginViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vk9-gY-k3J"/>
                         <viewControllerLayoutGuide type="bottom" id="HsS-wu-8KE"/>
