@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
             
+            // First, lets check if Particle is connected.
             httpGet("") { (data, error) -> Void in
                 
                 if error == nil {
