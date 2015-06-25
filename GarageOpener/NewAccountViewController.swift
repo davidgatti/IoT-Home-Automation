@@ -12,7 +12,6 @@ import Parse
 
 class NewAccountViewController: UIViewController {
     
-    var tmpUserName: String?
     @IBOutlet weak var tfname: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!

@@ -38,11 +38,13 @@
                     </view>
                     <connections>
                         <segue destination="nz9-he-jL5" kind="show" identifier="garageDoor" id="Fon-cm-eky"/>
-                        <segue destination="YKJ-TQ-sKz" kind="show" identifier="firstLogin" id="fqz-71-ooW"/>
+                        <segue destination="YKJ-TQ-sKz" kind="show" identifier="Register" id="fqz-71-ooW"/>
+                        <segue destination="JM6-Rz-b8u" kind="show" identifier="Login" id="DL6-JV-FGB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-2172" y="1569"/>
         </scene>
         <!--Error View Controller-->
         <scene sceneID="Hni-aJ-UdI">
@@ -105,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiJ-30-Q7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="-541"/>
+            <point key="canvasLocation" x="-2172" y="821"/>
         </scene>
         <!--Garage Door View Controller-->
         <scene sceneID="uNC-vy-ufo">
@@ -238,7 +240,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHy-vw-7iM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255" y="385"/>
+            <point key="canvasLocation" x="-1398" y="821"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="dHx-qg-hgL">
+            <objects>
+                <viewController id="JM6-Rz-b8u" customClass="LoginViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vk9-gY-k3J"/>
+                        <viewControllerLayoutGuide type="bottom" id="HsS-wu-8KE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yet-ec-fci">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoV-pt-1GA">
+                                <rect key="frame" x="248" y="104" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lvl-xb-vtR">
+                                <rect key="frame" x="155" y="172" width="229" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="aAB-mu-5NG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DKp-Fa-hbq">
+                                <rect key="frame" x="155" y="221" width="229" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNS-aG-YWx">
+                                <rect key="frame" x="246" y="280" width="64" height="30"/>
+                                <state key="normal" title="Let me in">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actLogin:" destination="JM6-Rz-b8u" eventType="touchUpInside" id="PHA-6B-c9a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KoV-pt-1GA" firstAttribute="centerX" secondItem="KNS-aG-YWx" secondAttribute="centerX" constant="-8.5" id="5AF-KC-0P8">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="KNS-aG-YWx" firstAttribute="top" secondItem="DKp-Fa-hbq" secondAttribute="bottom" constant="29" id="AC3-MZ-wbe"/>
+                            <constraint firstItem="DKp-Fa-hbq" firstAttribute="top" secondItem="Lvl-xb-vtR" secondAttribute="bottom" constant="19" id="ApK-qz-eZV"/>
+                            <constraint firstItem="KoV-pt-1GA" firstAttribute="top" secondItem="vk9-gY-k3J" secondAttribute="bottom" constant="84" id="GWm-lS-ffh"/>
+                            <constraint firstItem="DKp-Fa-hbq" firstAttribute="centerX" secondItem="Lvl-xb-vtR" secondAttribute="centerX" id="aSE-Lk-8sk"/>
+                            <constraint firstItem="DKp-Fa-hbq" firstAttribute="width" secondItem="Lvl-xb-vtR" secondAttribute="width" id="iby-m4-BWQ"/>
+                            <constraint firstItem="Lvl-xb-vtR" firstAttribute="top" secondItem="KoV-pt-1GA" secondAttribute="bottom" constant="47" id="lG0-jg-fHr"/>
+                            <constraint firstItem="KoV-pt-1GA" firstAttribute="centerX" secondItem="Lvl-xb-vtR" secondAttribute="centerX" id="nC2-va-nJd"/>
+                            <constraint firstAttribute="centerX" secondItem="KoV-pt-1GA" secondAttribute="centerX" constant="30.5" id="qtx-aJ-te4">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tfUserEmail" destination="Lvl-xb-vtR" id="V0q-tL-skJ"/>
+                        <outlet property="tfUserPassword" destination="DKp-Fa-hbq" id="EPz-H7-iWV"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backFromLogin" id="Y7U-iV-AfD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jcl-Cm-w5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1761" y="2337"/>
         </scene>
         <!--New Account View Controller-->
         <scene sceneID="FUS-Lv-Pi0">
@@ -298,7 +368,7 @@
                                     <constraint firstAttribute="width" constant="263" id="y2X-CI-bca"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -328,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zne-vN-V6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="1991"/>
+            <point key="canvasLocation" x="-2569" y="2337"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="oV4-n4-yYl">
@@ -410,7 +480,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wr4-WP-36j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="2737"/>
+            <point key="canvasLocation" x="-2569.5" y="3073"/>
         </scene>
     </scenes>
     <resources>
@@ -418,6 +488,6 @@
         <image name="user" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T6L-qn-MJu"/>
+        <segue reference="AbP-wU-hHH"/>
     </inferredMetricsTieBreakers>
 </document>

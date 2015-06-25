@@ -106,7 +106,7 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         btnTakePhotho.enabled = false
         
         // New size for the image
-        var size: CGSize = CGSize(width: 250, height: 250)
+        var size: CGSize = CGSize(width: 100, height: 100)
         
         // Resizign the image
         var smallImage = resizeImage(imageView.image!, newSize: size)
@@ -115,10 +115,11 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imageData = UIImageJPEGRepresentation(smallImage, 1.0)
         
         // Converting the image in to a Pars file
-        let imageFile:PFFile = PFFile(name: self.userName + ".jpg", data: imageData)
+        let imageFile = PFFile(name: "avatar.jpg", data: imageData)
         
         // Making a Parse query
         let user = PFUser()
+        user.username = self.userName
         user.email = self.userEmail
         user.password = self.userPassword
         user.setObject(imageData, forKey: "profilePhotho")
@@ -135,7 +136,6 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
                 let defaults = NSUserDefaults.standardUserDefaults()
                 
                 defaults.setValue(user.objectId!, forKey: "userID")
-                defaults.setValue(self.userName, forKey: "userName")
                 
                 self.performSegueWithIdentifier("backFromNewAccount", sender: self)
             }
