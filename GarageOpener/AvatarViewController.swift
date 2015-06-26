@@ -116,13 +116,14 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         // Converting the image in to a Pars file
         let imageFile = PFFile(name: "avatar.jpg", data: imageData)
+        imageFile.save()
         
         // Making a Parse query
         let user = PFUser()
         user.username = self.userName
         user.email = self.userEmail
         user.password = self.userPassword
-        user.setObject(imageData, forKey: "profilePhotho")
+        user.setObject(imageFile, forKey: "profilePhotho")
         
         user.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
