@@ -38,13 +38,64 @@
                     </view>
                     <connections>
                         <segue destination="nz9-he-jL5" kind="show" identifier="garageDoor" id="Fon-cm-eky"/>
-                        <segue destination="YKJ-TQ-sKz" kind="show" identifier="Register" id="fqz-71-ooW"/>
-                        <segue destination="JM6-Rz-b8u" kind="show" identifier="Login" id="DL6-JV-FGB"/>
+                        <segue destination="MWk-Ph-LE2" kind="show" identifier="decisionView" id="BMS-Fq-6lj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2172" y="1569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4HH-OA-FKe">
+            <objects>
+                <viewController id="MWk-Ph-LE2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OWC-Un-MKt"/>
+                        <viewControllerLayoutGuide type="bottom" id="vHl-BG-e9X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DaK-Xe-csL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="008-Ct-YkG">
+                                <rect key="frame" x="165" y="298" width="92" height="30"/>
+                                <state key="normal" title="New Account">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YKJ-TQ-sKz" kind="show" id="GQf-QB-lLp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQE-Ug-fG3">
+                                <rect key="frame" x="344" y="298" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="JM6-Rz-b8u" kind="show" id="XYW-ZE-E6x"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGt-GF-hfm">
+                                <rect key="frame" x="244" y="92" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TQE-Ug-fG3" firstAttribute="top" secondItem="nGt-GF-hfm" secondAttribute="bottom" constant="185" id="A4R-lG-AlR"/>
+                            <constraint firstItem="nGt-GF-hfm" firstAttribute="trailing" secondItem="008-Ct-YkG" secondAttribute="trailing" constant="100" id="Cw1-QG-RJx"/>
+                            <constraint firstItem="008-Ct-YkG" firstAttribute="top" secondItem="nGt-GF-hfm" secondAttribute="bottom" constant="185" id="R4W-aS-HcM"/>
+                            <constraint firstAttribute="centerX" secondItem="nGt-GF-hfm" secondAttribute="centerX" id="aCq-Kn-Rww"/>
+                            <constraint firstItem="nGt-GF-hfm" firstAttribute="top" secondItem="OWC-Un-MKt" secondAttribute="bottom" constant="72" id="cYv-Q4-vD8"/>
+                            <constraint firstItem="TQE-Ug-fG3" firstAttribute="leading" secondItem="nGt-GF-hfm" secondAttribute="leading" constant="100" id="u8c-gm-GHi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gyk-kk-dv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2172" y="2265"/>
         </scene>
         <!--Error View Controller-->
         <scene sceneID="Hni-aJ-UdI">
@@ -64,7 +115,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3M-tr-kIQ">
                                 <rect key="frame" x="268" y="364" width="64" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AA-g4-jxZ">
@@ -268,7 +319,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoV-pt-1GA">
                                 <rect key="frame" x="248" y="104" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lvl-xb-vtR">
@@ -319,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcl-Cm-w5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1761" y="2337"/>
+            <point key="canvasLocation" x="-1811" y="3223"/>
         </scene>
         <!--New Account View Controller-->
         <scene sceneID="FUS-Lv-Pi0">
@@ -409,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zne-vN-V6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2569" y="2337"/>
+            <point key="canvasLocation" x="-2619" y="3223"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="oV4-n4-yYl">
@@ -491,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wr4-WP-36j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2569.5" y="3073"/>
+            <point key="canvasLocation" x="-2620" y="3959"/>
         </scene>
     </scenes>
     <resources>
@@ -499,6 +550,6 @@
         <image name="user" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AbP-wU-hHH"/>
+        <segue reference="T6L-qn-MJu"/>
     </inferredMetricsTieBreakers>
 </document>

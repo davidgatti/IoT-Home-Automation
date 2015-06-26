@@ -53,23 +53,10 @@ class MainViewController: UIViewController {
         }
         else
         {
-            // Check if the app was run for the first time
-            let defaults = NSUserDefaults.standardUserDefaults()
-            if let name = defaults.stringForKey("userID") {
-                
-                dispatch_async(dispatch_get_main_queue()) {
 
-                        self.performSegueWithIdentifier("Login", sender: self)
+            dispatch_async(dispatch_get_main_queue()) {
 
-
-                }
-                
-            } else {
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.performSegueWithIdentifier("Register", sender: self)
-                }
-                
+                self.performSegueWithIdentifier("decisionView", sender: self)
             }
         }
     }
