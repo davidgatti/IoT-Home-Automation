@@ -94,8 +94,9 @@ class AppSettings {
         var qHistory = PFQuery(className: "History")
         qHistory.orderByDescending("createdAt")
         qHistory.getFirstObjectInBackgroundWithBlock { (lastEntry: PFObject?, error) -> Void in
-        
+            
             let user = lastEntry?.objectForKey("user") as? PFUser
+            user?.fetch()
             
             self.lastUser = user!.username!
             
