@@ -9,7 +9,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="MainViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -344,9 +344,19 @@
                                     <action selector="actLogin:" destination="JM6-Rz-b8u" eventType="touchUpInside" id="PHA-6B-c9a"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w19-be-5yO">
+                                <rect key="frame" x="206" y="324" width="145" height="30"/>
+                                <state key="normal" title="I forgot my password">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ib9-Et-dAz" kind="show" id="xAn-Qa-aUG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="w19-be-5yO" firstAttribute="top" secondItem="KNS-aG-YWx" secondAttribute="bottom" constant="14" id="4O7-71-dbo"/>
                             <constraint firstItem="KoV-pt-1GA" firstAttribute="centerX" secondItem="KNS-aG-YWx" secondAttribute="centerX" constant="-8.5" id="5AF-KC-0P8">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -354,6 +364,7 @@
                             <constraint firstItem="DKp-Fa-hbq" firstAttribute="top" secondItem="Lvl-xb-vtR" secondAttribute="bottom" constant="19" id="ApK-qz-eZV"/>
                             <constraint firstItem="KoV-pt-1GA" firstAttribute="top" secondItem="vk9-gY-k3J" secondAttribute="bottom" constant="84" id="GWm-lS-ffh"/>
                             <constraint firstItem="DKp-Fa-hbq" firstAttribute="centerX" secondItem="Lvl-xb-vtR" secondAttribute="centerX" id="aSE-Lk-8sk"/>
+                            <constraint firstItem="w19-be-5yO" firstAttribute="centerX" secondItem="KNS-aG-YWx" secondAttribute="centerX" id="gon-Gb-Coi"/>
                             <constraint firstItem="DKp-Fa-hbq" firstAttribute="width" secondItem="Lvl-xb-vtR" secondAttribute="width" id="iby-m4-BWQ"/>
                             <constraint firstItem="Lvl-xb-vtR" firstAttribute="top" secondItem="KoV-pt-1GA" secondAttribute="bottom" constant="47" id="lG0-jg-fHr"/>
                             <constraint firstItem="KoV-pt-1GA" firstAttribute="centerX" secondItem="Lvl-xb-vtR" secondAttribute="centerX" id="nC2-va-nJd"/>
@@ -371,6 +382,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcl-Cm-w5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1811" y="3223"/>
+        </scene>
+        <!--Reset Password View Controller-->
+        <scene sceneID="NTk-pF-mZ2">
+            <objects>
+                <viewController id="Ib9-Et-dAz" customClass="ResetPasswordViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BfJ-sJ-V5t"/>
+                        <viewControllerLayoutGuide type="bottom" id="QU8-hL-XIw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l40-ej-dgv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef2-5B-Oag">
+                                <rect key="frame" x="249" y="250" width="32" height="30"/>
+                                <state key="normal" title="Reet">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actReset:" destination="Ib9-Et-dAz" eventType="touchUpInside" id="1BA-oc-zpj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="You Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Nf-T6-zfg">
+                                <rect key="frame" x="252" y="181" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="3d6-Yp-ooU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ef2-5B-Oag" firstAttribute="top" secondItem="3Nf-T6-zfg" secondAttribute="bottom" constant="39" id="f8Z-ln-Hna"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="top" secondItem="BfJ-sJ-V5t" secondAttribute="bottom" constant="161" id="lqK-Wz-ibA"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="centerX" secondItem="l40-ej-dgv" secondAttribute="centerX" id="mr8-kn-pjn"/>
+                            <constraint firstItem="ef2-5B-Oag" firstAttribute="leading" secondItem="l40-ej-dgv" secondAttribute="leading" constant="249" id="nfP-oF-wL1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tfEmail" destination="3Nf-T6-zfg" id="daS-CO-Yak"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAA-AJ-vS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1811" y="3893"/>
         </scene>
         <!--New Account View Controller-->
         <scene sceneID="FUS-Lv-Pi0">
@@ -550,6 +607,6 @@
         <image name="user" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y7U-iV-AfD"/>
+        <segue reference="AbP-wU-hHH"/>
     </inferredMetricsTieBreakers>
 </document>

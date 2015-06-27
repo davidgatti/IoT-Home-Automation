@@ -21,6 +21,7 @@
 		E59B08FA1B24E539009B50D4 /* GarageDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08F91B24E539009B50D4 /* GarageDoorViewController.swift */; };
 		E59BF4A11B3C694600DF65E1 /* NSData+GarageData.m in Sources */ = {isa = PBXBuildFile; fileRef = E59BF4A01B3C694600DF65E1 /* NSData+GarageData.m */; };
 		E59BF4A31B3C877900DF65E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */; };
+		E5A3F1F51B3F1F140031EDA8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */; };
 		E5D36DF41B24FE19004B675F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5D36DF31B24FE19004B675F /* Settings.bundle */; };
 		E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36DF51B2644A9004B675F /* AppSettings.swift */; };
 		E5DB28C61B2DFE6600B3C093 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28C51B2DFE6600B3C093 /* Bolts.framework */; };
@@ -73,6 +74,7 @@
 		E59BF49F1B3C694600DF65E1 /* NSData+GarageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GarageData.h"; sourceTree = "<group>"; };
 		E59BF4A01B3C694600DF65E1 /* NSData+GarageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GarageData.m"; sourceTree = "<group>"; };
 		E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		E5D36DF31B24FE19004B675F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E5D36DF51B2644A9004B675F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		E5DB28C51B2DFE6600B3C093 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */,
 				E597B90A1B37241400D84514 /* ErrorViewController.swift */,
 				E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */,
+				E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */,
 				E59B08F41B23FA6F009B50D4 /* Http.swift in Sources */,
 				E59BF4A11B3C694600DF65E1 /* NSData+GarageData.m in Sources */,
+				E5A3F1F51B3F1F140031EDA8 /* ResetPasswordViewController.swift in Sources */,
 				E597B90B1B37241400D84514 /* ErrorViewController.swift in Sources */,
 				E59B08F61B24B94B009B50D4 /* SwiftJSON.swift in Sources */,
 				E59B08FA1B24E539009B50D4 /* GarageDoorViewController.swift in Sources */,
