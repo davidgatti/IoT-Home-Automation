@@ -26,7 +26,21 @@ class LoginViewController: UIViewController {
             if user != nil {
                 // Do stuff after successful
                 
-                self.performSegueWithIdentifier("backFromLogin", sender: self)
+                let confirmed = user!["emailVerified"] as? Bool
+                
+                if confirmed == true {
+                
+                    self.performSegueWithIdentifier("backFromLogin", sender: self)
+                } else {
+                    
+                    let email = user?.email
+                    
+                    user?.email = email
+                    user?.save()
+                    
+                    self.performSegueWithIdentifier("resentEmailConfirmation", sender: self)
+                    
+                }
                 
             } else {
                 // The login failed. Check error to see why.

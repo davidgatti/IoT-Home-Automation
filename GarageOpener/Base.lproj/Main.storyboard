@@ -377,6 +377,7 @@
                         <outlet property="tfUserEmail" destination="Lvl-xb-vtR" id="V0q-tL-skJ"/>
                         <outlet property="tfUserPassword" destination="DKp-Fa-hbq" id="EPz-H7-iWV"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backFromLogin" id="Y7U-iV-AfD"/>
+                        <segue destination="8nJ-CC-6cb" kind="show" identifier="resentEmailConfirmation" id="OF9-kr-3Zj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcl-Cm-w5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -428,6 +429,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAA-AJ-vS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1811" y="3893"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2gA-f1-oZ1">
+            <objects>
+                <viewController id="8nJ-CC-6cb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ie-9u-XPL"/>
+                        <viewControllerLayoutGuide type="bottom" id="N2E-Y8-pGy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kgf-AR-w96">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent you a confirmation email., confirma nd login again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8O-Jh-mT1">
+                                <rect key="frame" x="76" y="152" width="448" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-83-4Dx">
+                                <rect key="frame" x="277" y="225" width="59" height="30"/>
+                                <state key="normal" title="Go back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="JM6-Rz-b8u" kind="show" id="Ugh-Zi-yUK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vbJ-83-4Dx" firstAttribute="top" secondItem="h8O-Jh-mT1" secondAttribute="bottom" constant="52" id="B1i-2e-xGv"/>
+                            <constraint firstItem="h8O-Jh-mT1" firstAttribute="top" secondItem="7ie-9u-XPL" secondAttribute="bottom" constant="132" id="BvD-JV-H56"/>
+                            <constraint firstItem="vbJ-83-4Dx" firstAttribute="leading" secondItem="kgf-AR-w96" secondAttribute="leading" constant="277" id="Llu-Ke-5mf"/>
+                            <constraint firstItem="h8O-Jh-mT1" firstAttribute="centerX" secondItem="kgf-AR-w96" secondAttribute="centerX" id="Trq-ij-LKX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMt-RQ-vRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1114" y="3223"/>
         </scene>
         <!--New Account View Controller-->
         <scene sceneID="FUS-Lv-Pi0">
@@ -607,6 +649,7 @@
         <image name="user" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AbP-wU-hHH"/>
+        <segue reference="Y7U-iV-AfD"/>
+        <segue reference="XYW-ZE-E6x"/>
     </inferredMetricsTieBreakers>
 </document>
