@@ -296,7 +296,6 @@
 				TargetAttributes = {
 					E59B08C21B22974F009B50D4 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = FVAK288GRW;
 					};
 					E59B08DA1B22974F009B50D4 = {
 						CreatedOnToolsVersion = 6.3.2;
