@@ -396,31 +396,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="You Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Nf-T6-zfg">
+                                <rect key="frame" x="176" y="180" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="6o4-oG-jZc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef2-5B-Oag">
-                                <rect key="frame" x="249" y="250" width="32" height="30"/>
-                                <state key="normal" title="Reet">
+                                <rect key="frame" x="225" y="250" width="153" height="30"/>
+                                <state key="normal" title="Send me a reset email">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="actReset:" destination="Ib9-Et-dAz" eventType="touchUpInside" id="1BA-oc-zpj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="You Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Nf-T6-zfg">
-                                <rect key="frame" x="252" y="181" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="3d6-Yp-ooU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgeting the password is normal. Just type your email that you used while creating your account and we are good to go." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-ap-9x8">
+                                <rect key="frame" x="60" y="67" width="480" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ef2-5B-Oag" firstAttribute="top" secondItem="3Nf-T6-zfg" secondAttribute="bottom" constant="39" id="f8Z-ln-Hna"/>
-                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="top" secondItem="BfJ-sJ-V5t" secondAttribute="bottom" constant="161" id="lqK-Wz-ibA"/>
-                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="centerX" secondItem="l40-ej-dgv" secondAttribute="centerX" id="mr8-kn-pjn"/>
-                            <constraint firstItem="ef2-5B-Oag" firstAttribute="leading" secondItem="l40-ej-dgv" secondAttribute="leading" constant="249" id="nfP-oF-wL1"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="top" secondItem="lSp-ap-9x8" secondAttribute="bottom" constant="70" id="0gT-SU-zs9"/>
+                            <constraint firstItem="lSp-ap-9x8" firstAttribute="top" secondItem="BfJ-sJ-V5t" secondAttribute="bottom" constant="47" id="6JE-Ze-D4k"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="centerX" secondItem="lSp-ap-9x8" secondAttribute="centerX" constant="1" id="7mr-RW-uvV"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="top" secondItem="lSp-ap-9x8" secondAttribute="bottom" constant="70" id="Edk-eY-URe"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="top" secondItem="lSp-ap-9x8" secondAttribute="bottom" constant="70" id="ICy-Wn-Taq"/>
+                            <constraint firstItem="ef2-5B-Oag" firstAttribute="centerX" secondItem="3Nf-T6-zfg" secondAttribute="centerX" constant="0.5" id="IEr-gA-U8n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lSp-ap-9x8" secondAttribute="trailing" constant="44" id="NQz-X0-eMA"/>
+                            <constraint firstItem="ef2-5B-Oag" firstAttribute="centerX" secondItem="3Nf-T6-zfg" secondAttribute="centerX" constant="0.5" id="U4f-tt-Mbb"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="centerX" secondItem="lSp-ap-9x8" secondAttribute="centerX" constant="1" id="UW9-Kk-dq8"/>
+                            <constraint firstItem="ef2-5B-Oag" firstAttribute="top" secondItem="3Nf-T6-zfg" secondAttribute="bottom" constant="40" id="UX4-9p-Awu"/>
+                            <constraint firstAttribute="centerX" secondItem="lSp-ap-9x8" secondAttribute="centerX" id="dAa-Kk-NBz"/>
+                            <constraint firstItem="ef2-5B-Oag" firstAttribute="centerX" secondItem="3Nf-T6-zfg" secondAttribute="centerX" id="f7W-Rw-G5I"/>
+                            <constraint firstItem="3Nf-T6-zfg" firstAttribute="top" secondItem="lSp-ap-9x8" secondAttribute="bottom" constant="70" id="rrh-7A-flr"/>
+                            <constraint firstItem="ef2-5B-Oag" firstAttribute="top" secondItem="3Nf-T6-zfg" secondAttribute="bottom" constant="40" id="unp-Xm-qH4"/>
+                            <constraint firstItem="lSp-ap-9x8" firstAttribute="leading" secondItem="l40-ej-dgv" secondAttribute="leadingMargin" constant="44" id="xB2-3N-ljc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7mr-RW-uvV"/>
+                                <exclude reference="Edk-eY-URe"/>
+                                <exclude reference="ICy-Wn-Taq"/>
+                                <exclude reference="rrh-7A-flr"/>
+                                <exclude reference="IEr-gA-U8n"/>
+                                <exclude reference="f7W-Rw-G5I"/>
+                                <exclude reference="unp-Xm-qH4"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tfEmail" destination="3Nf-T6-zfg" id="daS-CO-Yak"/>
