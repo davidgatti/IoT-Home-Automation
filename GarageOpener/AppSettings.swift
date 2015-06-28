@@ -95,22 +95,20 @@ class AppSettings {
         qHistory.orderByDescending("createdAt")
         qHistory.getFirstObjectInBackgroundWithBlock { (lastEntry: PFObject?, error) -> Void in
             
-            var qUser = PFQuery(className: "Users")
+            let user = lastEntry?.objectForKey("user") as? PFUser
+            user?.fetch()
             
-            qUser.getObjectInBackgroundWithId((lastEntry?.objectForKey("userID") as? String)!) {
-                (name: PFObject?, error) -> Void in
-                
-                self.lastUser = (name?.objectForKey("name") as? String)!
-                
-                if let file = name?.objectForKey("avatar") as? PFFile, data = file.getData() {
-                    self.avatar = UIImage(data: data)
-                }
-
-                self.getLastUsed(name!.createdAt!, completition: { () -> () in
-                
-                    return completition()
-                })
+            self.lastUser = user!.username!
+            
+            if let file = user?.objectForKey("profilePhotho") as? PFFile, data = file.getData() {
+                self.avatar = UIImage(data: data)
             }
+
+            self.getLastUsed(lastEntry!.createdAt!, completition: { () -> () in
+            
+                return completition()
+            })
+        
         }
     }
     
@@ -142,16 +140,23 @@ class AppSettings {
     }
     
     private func setHistory(completition: (result: String) -> Void) {
+        
+        let user = PFUser.currentUser()
         let history = PFObject(className: "History")
-        history["userID"] = self.userID
+        
+        history["user"] = user
         history["applianceID"] = "eX9QCJGga5"
         history["state"] = self.isOpen
+        
         history.saveInBackground()
     }
     
     private func setGarageDoor(completition: (result: String) -> Void) {
+    
         var query = PFObject(withoutDataWithClassName: "GarageDoor", objectId: "eX9QCJGga5")
+        
         query["useCount"] = self.useCount
+        
         query.saveInBackground()
     }
 }

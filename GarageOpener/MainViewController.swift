@@ -7,26 +7,27 @@
 //
 
 import UIKit
+import Parse
 
 class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Check if the app was run for the first time
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let name = defaults.stringForKey("userName") {
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
             
+            // First, lets check if Particle is connected.
             httpGet("") { (data, error) -> Void in
                 
                 if error == nil {
                     
-                    // If we have the remote connected to the internets, 
+                    // If we have the remote connected to the internets,
                     // then we can continue getting data and show the main interface.
                     if data["connected"] {
                         
                         var settings = AppSettings.sharedInstance
-
+                        
                         // Retrive all the data from Parse and show the main interface
                         settings.get({ (result) -> Void in
                             dispatch_async(dispatch_get_main_queue()) {
@@ -52,10 +53,11 @@ class MainViewController: UIViewController {
         }
         else
         {
-            dispatch_async(dispatch_get_main_queue()) {
-                self.performSegueWithIdentifier("firstLogin", sender: self)
-            }
 
+            dispatch_async(dispatch_get_main_queue()) {
+
+                self.performSegueWithIdentifier("decisionView", sender: self)
+            }
         }
     }
 }

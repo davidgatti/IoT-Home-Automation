@@ -16,6 +16,8 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
     //MARK: Variable
     var userID: String!
     var userName: String!
+    var userEmail: String!
+    var userPassword: String!
     
     //MARK: Constant
     let imagePicker = UIImagePickerController()
@@ -43,10 +45,12 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     func resizeImage(image: UIImage, newSize: CGSize) -> (UIImage) {
+        
         let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
         let imageRef = image.CGImage
         
@@ -102,7 +106,7 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         btnTakePhotho.enabled = false
         
         // New size for the image
-        var size: CGSize = CGSize(width: 250, height: 250)
+        var size: CGSize = CGSize(width: 100, height: 100)
         
         // Resizign the image
         var smallImage = resizeImage(imageView.image!, newSize: size)
@@ -111,22 +115,31 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imageData = UIImageJPEGRepresentation(smallImage, 1.0)
         
         // Converting the image in to a Pars file
-        let imageFile:PFFile = PFFile(data: imageData)
+        let imageFile = PFFile(name: "avatar.jpg", data: imageData)
+        imageFile.save()
         
         // Making a Parse query
-        let user = PFObject(className: "Users")
+        let user = PFUser()
+        user.username = self.userName
+        user.email = self.userEmail
+        user.password = self.userPassword
+        user.setObject(imageFile, forKey: "profilePhotho")
         
-        user["name"] = self.userName!
-        user["avatar"] = imageFile
-        user.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        user.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            
-            defaults.setValue(user.objectId!, forKey: "userID")
-            defaults.setValue(self.userName, forKey: "userName")
-            
-            self.performSegueWithIdentifier("backFromNewAccount", sender: self)
- 
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? NSString
+
+                println(errorString)
+                
+            } else {
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                
+                defaults.setValue(user.objectId!, forKey: "userID")
+                
+                self.performSegueWithIdentifier("backFromNewAccount", sender: self)
+            }
         }
     }
 }
