@@ -138,7 +138,9 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
                 
                 defaults.setValue(user.objectId!, forKey: "userID")
                 
-                self.performSegueWithIdentifier("backFromNewAccount", sender: self)
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainView") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
             }
         }
     }

@@ -124,16 +124,6 @@ class GarageDoorViewController: UIViewController {
         }
     }
     
-
-    @IBAction func logout(sender: AnyObject) {
-        
-        PFUser.logOut()
-        
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("login") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
     deinit {
         // make sure to remove the observer when this view controller is dismissed/deallocated
         NSNotificationCenter.defaultCenter().removeObserver(self, name: nil, object: nil)

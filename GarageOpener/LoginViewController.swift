@@ -30,7 +30,10 @@ class LoginViewController: UIViewController {
                 
                 if confirmed == true {
                 
-                    self.performSegueWithIdentifier("backFromLogin", sender: self)
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                    let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainView") as! UIViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                    
                 } else {
                     
                     let email = user?.email

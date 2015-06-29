@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E54E6C0A1B406C12003B3E53 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C091B406C12003B3E53 /* GridViewController.swift */; };
+		E54E6C0C1B40D3AF003B3E53 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */; };
 		E55C85B81B2CAF090063B75E /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */; };
 		E597B90B1B37241400D84514 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597B90A1B37241400D84514 /* ErrorViewController.swift */; };
 		E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08C81B22974F009B50D4 /* AppDelegate.swift */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E54E6C091B406C12003B3E53 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		E597B90A1B37241400D84514 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E59B08C31B22974F009B50D4 /* GarageOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +247,8 @@
 				E597B90A1B37241400D84514 /* ErrorViewController.swift */,
 				E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */,
 				E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */,
+				E54E6C091B406C12003B3E53 /* GridViewController.swift */,
+				E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E59BF4A31B3C877900DF65E1 /* LoginViewController.swift in Sources */,
+				E54E6C0C1B40D3AF003B3E53 /* UserSettingsViewController.swift in Sources */,
 				E59B08CE1B22974F009B50D4 /* MainViewController.swift in Sources */,
 				E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */,
 				E55C85B81B2CAF090063B75E /* NewAccountViewController.swift in Sources */,
@@ -359,6 +366,7 @@
 				E59B08F41B23FA6F009B50D4 /* Http.swift in Sources */,
 				E59BF4A11B3C694600DF65E1 /* NSData+GarageData.m in Sources */,
 				E5A3F1F51B3F1F140031EDA8 /* ResetPasswordViewController.swift in Sources */,
+				E54E6C0A1B406C12003B3E53 /* GridViewController.swift in Sources */,
 				E597B90B1B37241400D84514 /* ErrorViewController.swift in Sources */,
 				E59B08F61B24B94B009B50D4 /* SwiftJSON.swift in Sources */,
 				E59B08FA1B24E539009B50D4 /* GarageDoorViewController.swift in Sources */,
