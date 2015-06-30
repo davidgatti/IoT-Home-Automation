@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E54E6C0A1B406C12003B3E53 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C091B406C12003B3E53 /* GridViewController.swift */; };
 		E54E6C0C1B40D3AF003B3E53 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */; };
+		E54E6C0E1B41F406003B3E53 /* TakePhothoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C0D1B41F406003B3E53 /* TakePhothoViewController.swift */; };
+		E54E6C101B420851003B3E53 /* ImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C0F1B420851003B3E53 /* ImageResize.swift */; };
+		E54E6C121B423565003B3E53 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C111B423565003B3E53 /* User.swift */; };
 		E55C85B81B2CAF090063B75E /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */; };
 		E597B90B1B37241400D84514 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597B90A1B37241400D84514 /* ErrorViewController.swift */; };
 		E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08C81B22974F009B50D4 /* AppDelegate.swift */; };
@@ -58,6 +61,9 @@
 /* Begin PBXFileReference section */
 		E54E6C091B406C12003B3E53 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		E54E6C0D1B41F406003B3E53 /* TakePhothoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhothoViewController.swift; sourceTree = "<group>"; };
+		E54E6C0F1B420851003B3E53 /* ImageResize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResize.swift; sourceTree = "<group>"; };
+		E54E6C111B423565003B3E53 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		E597B90A1B37241400D84514 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E59B08C31B22974F009B50D4 /* GarageOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +209,8 @@
 			children = (
 				E59B08F31B23FA6F009B50D4 /* Http.swift */,
 				E5D36DF51B2644A9004B675F /* AppSettings.swift */,
+				E54E6C111B423565003B3E53 /* User.swift */,
+				E54E6C0F1B420851003B3E53 /* ImageResize.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */,
 				E54E6C091B406C12003B3E53 /* GridViewController.swift */,
 				E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */,
+				E54E6C0D1B41F406003B3E53 /* TakePhothoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -369,7 +378,10 @@
 				E54E6C0A1B406C12003B3E53 /* GridViewController.swift in Sources */,
 				E597B90B1B37241400D84514 /* ErrorViewController.swift in Sources */,
 				E59B08F61B24B94B009B50D4 /* SwiftJSON.swift in Sources */,
+				E54E6C121B423565003B3E53 /* User.swift in Sources */,
+				E54E6C101B420851003B3E53 /* ImageResize.swift in Sources */,
 				E59B08FA1B24E539009B50D4 /* GarageDoorViewController.swift in Sources */,
+				E54E6C0E1B41F406003B3E53 /* TakePhothoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

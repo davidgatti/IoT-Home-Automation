@@ -11,29 +11,55 @@ import Parse
 
 class UserSettingsViewController: UITableViewController {
 
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var btnPhotho: UIButton!
+
+    var user = User.sharedInstance
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tfName.text = user.username
+        self.tfEmail.text = user.email
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // Make sure taht we update the new photho
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var image = UIImage(data: self.user.photho!)
+        self.btnPhotho.setBackgroundImage(image, forState: UIControlState.Normal)
     }
     
-
     @IBAction func actCancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     
     }
     @IBAction func actSave(sender: AnyObject) {
+        
+        self.user.username = self.tfName.text
+        self.user.email = self.tfEmail.text
+
+        self.user.logOut()
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("credentialsNavigatin") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
     
+    @IBAction func actChengePhotho(sender: AnyObject) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("takePhotho") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     @IBAction func logout(sender: AnyObject) {
         
-        PFUser.logOut()
+        self.user.logOut()
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("credentialsNavigatin") as! UIViewController
