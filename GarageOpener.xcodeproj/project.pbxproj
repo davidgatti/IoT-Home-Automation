@@ -141,6 +141,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5584EF01B446CD000DAB558 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */,
+				E5DB28E51B31419000B3C093 /* AvatarViewController.swift */,
+				E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */,
+				E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */,
+				E54E6C0D1B41F406003B3E53 /* TakePhothoViewController.swift */,
+				E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		E5584EF11B446D2A00DAB558 /* Fixes */ = {
+			isa = PBXGroup;
+			children = (
+				E59BF49F1B3C694600DF65E1 /* NSData+GarageData.h */,
+				E59BF4A01B3C694600DF65E1 /* NSData+GarageData.m */,
+				E59BF49E1B3C694500DF65E1 /* GarageOpener-Bridging-Header.h */,
+			);
+			name = Fixes;
+			sourceTree = "<group>";
+		};
 		E59B08BA1B22974F009B50D4 = {
 			isa = PBXGroup;
 			children = (
@@ -162,13 +185,11 @@
 		E59B08C51B22974F009B50D4 /* GarageOpener */ = {
 			isa = PBXGroup;
 			children = (
+				E59B08C81B22974F009B50D4 /* AppDelegate.swift */,
+				E5584EF11B446D2A00DAB558 /* Fixes */,
 				E5CC37DB1B3484AF00FE8F18 /* Helpers */,
 				E5E8BE901B34C18C006EB7D7 /* ViewControllers */,
-				E59B08C81B22974F009B50D4 /* AppDelegate.swift */,
 				E59B08C61B22974F009B50D4 /* Supporting Files */,
-				E59BF49F1B3C694600DF65E1 /* NSData+GarageData.h */,
-				E59BF4A01B3C694600DF65E1 /* NSData+GarageData.m */,
-				E59BF49E1B3C694500DF65E1 /* GarageOpener-Bridging-Header.h */,
 			);
 			path = GarageOpener;
 			sourceTree = "<group>";
@@ -251,16 +272,11 @@
 			isa = PBXGroup;
 			children = (
 				E59B08CF1B22974F009B50D4 /* Main.storyboard */,
-				E5DB28E51B31419000B3C093 /* AvatarViewController.swift */,
+				E5584EF01B446CD000DAB558 /* User */,
 				E59B08CD1B22974F009B50D4 /* MainViewController.swift */,
 				E59B08F91B24E539009B50D4 /* GarageDoorViewController.swift */,
-				E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */,
 				E597B90A1B37241400D84514 /* ErrorViewController.swift */,
-				E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */,
-				E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */,
 				E54E6C091B406C12003B3E53 /* GridViewController.swift */,
-				E54E6C0B1B40D3AF003B3E53 /* UserSettingsViewController.swift */,
-				E54E6C0D1B41F406003B3E53 /* TakePhothoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
