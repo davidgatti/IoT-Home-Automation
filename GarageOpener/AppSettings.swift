@@ -32,41 +32,6 @@ class AppSettings {
             return tmpUserID
         }
     }
-
-    //MARK: Secrets
-    var ParticleToken: String = ""
-    var ParticleDeviceID: String = ""
-    var ParseAppID: String = ""
-    var ParseClientKey: String = ""
-    
-    //MARK: Initialization
-    init() {
-        
-        // Get the Token and Device ID for Particle
-        var myDict: NSDictionary?
-
-        if let path = NSBundle.mainBundle().pathForResource("Secrets", ofType: "plist") {
-            myDict = NSDictionary(contentsOfFile: path)
-        }
-        
-        // Particle.io
-        if let tmpParseToken = myDict?.objectForKey("ParticleToken") as? String {
-            self.ParticleToken = tmpParseToken
-        }
-        
-        if let tmpParseDeviceID = myDict?.objectForKey("ParticleDeviceID") as? String {
-            self.ParticleDeviceID = tmpParseDeviceID
-        }
-        
-        // Parse.com
-        if let tmpParseAppID = myDict?.objectForKey("ParseAppID") as? String {
-            self.ParseAppID = tmpParseAppID
-        }
-        
-        if let tmpParseClientID = myDict?.objectForKey("ParseClientID") as? String {
-            self.ParseClientKey = tmpParseClientID
-        }
-    }
     
     //MARK: Get
     

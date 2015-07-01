@@ -8,8 +8,8 @@
 
 import Foundation
 
-var token = AppSettings.sharedInstance.ParticleToken
-var device = AppSettings.sharedInstance.ParticleDeviceID
+var token = Secrets.sharedInstance.ParticleToken
+var device = Secrets.sharedInstance.ParticleDeviceID
 
 func httpGet(name: String, callback: (JSON, NSError?) -> Void) {
     

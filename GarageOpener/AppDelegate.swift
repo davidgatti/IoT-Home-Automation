@@ -20,15 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        var settings = AppSettings.sharedInstance
+        var secrets = Secrets.sharedInstance
         
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios_guide#localdatastore/iOS
         Parse.enableLocalDatastore()
         
         // Initialize Parse.
-        Parse.setApplicationId(settings.ParseAppID,
-            clientKey: settings.ParseClientKey)
+        Parse.setApplicationId(secrets.ParseAppID, clientKey: secrets.ParseClientKey)
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
