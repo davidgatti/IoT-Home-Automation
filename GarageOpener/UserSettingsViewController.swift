@@ -22,8 +22,6 @@ class UserSettingsViewController: UITableViewController {
         
         self.tfName.text = user.username
         self.tfEmail.text = user.email
-
-        // Do any additional setup after loading the view.
     }
     
     // Make sure taht we update the new photho

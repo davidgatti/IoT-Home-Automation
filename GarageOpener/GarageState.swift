@@ -15,12 +15,10 @@ class GarageState {
     static let sharedInstance = GarageState()
 
     //MARK: Variables
+    var user: PFUser!
     var isOpen: Int = 0
     var useCount: Int = 0
-    var user: PFUser!
-    var lastUser: String!
     var lastUsed: NSDate = NSDate.distantPast() as! NSDate
-    var avatar: UIImage!
     
     //MARK: Get
     
@@ -49,21 +47,12 @@ class GarageState {
         qHistory.orderByDescending("createdAt")
         qHistory.getFirstObjectInBackgroundWithBlock { (lastEntry: PFObject?, error) -> Void in
             
-            let user = lastEntry?.objectForKey("user") as? PFUser
-            user?.fetch()
-            
-            self.lastUser = user!.username!
             self.isOpen = (lastEntry?.objectForKey("state") as? Int)!
-            
-            if let file = user?.objectForKey("profilePhotho") as? PFFile, data = file.getData() {
-                self.avatar = UIImage(data: data)
-            }
+            self.lastUsed = lastEntry!.createdAt!
+            self.user = lastEntry?.objectForKey("user") as? PFUser
 
-            self.getLastUsed(lastEntry!.createdAt!, completition: { () -> () in
-            
-                return completition()
-            })
-        
+            self.user?.fetch()
+            return completition()
         }
     }
     
@@ -71,20 +60,10 @@ class GarageState {
         
         var qGarageDoor = PFQuery(className:"GarageDoor")
         qGarageDoor.getObjectInBackgroundWithId("eX9QCJGga5") { (garage: PFObject?, error: NSError?) -> Void in
+            
             self.useCount = (garage!.objectForKey("useCount") as! Int)
             return completition()
         }
-    }
-    
-    private func getLastUsed(time: NSDate, completition:() -> ()) {
-        
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.zzz'Z'"
-        
-        //var date:NSDate = dateFormatter.dateFromString(time)!
-        self.lastUsed = time
-    
-        return completition()
     }
     
     //MARK: Set

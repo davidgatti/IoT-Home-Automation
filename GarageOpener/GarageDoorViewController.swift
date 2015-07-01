@@ -43,8 +43,8 @@ class GarageDoorViewController: UIViewController {
             formatter.dateStyle = NSDateFormatterStyle.LongStyle
             formatter.timeStyle = .MediumStyle
             
-            self.avatar.image = self.garageState.avatar
-            self.msgLastUserName.text = self.garageState.lastUser
+            self.avatar.image = UIImage(data: (self.garageState.user.objectForKey("profilePhotho") as? PFFile)!.getData()!)
+            self.msgLastUserName.text = self.garageState.user.username
             self.msgLastUser.text = "was the last person to " + state.str + "."
             self.msgLastDate.text = formatter.stringFromDate(self.garageState.lastUsed)
             self.btnOC.setTitle(state.btn, forState: UIControlState.Normal)
@@ -53,7 +53,7 @@ class GarageDoorViewController: UIViewController {
     }
     
     // Returnign the state of the garage door
-    func garageDoorState() -> (btn: String, str: String, open: Int){
+    func garageDoorState() -> (btn: String, str: String){
         
         var btnState: String
         var strState: String
@@ -62,14 +62,14 @@ class GarageDoorViewController: UIViewController {
         if self.garageState.isOpen == 0 {
             btnState = "Close"
             strState = "open"
-            isOpen = 1
+            self.garageState.isOpen = 1
         } else {
             btnState = "Open"
             strState = "close"
-            isOpen = 0
+            self.garageState.isOpen = 0
         }
         
-        return (btnState, strState, isOpen)
+        return (btnState, strState)
         
     }
     
@@ -96,7 +96,7 @@ class GarageDoorViewController: UIViewController {
                 
                 var state = self.garageDoorState()
                 
-                self.garageState.isOpen = state.open
+                self.garageState.user = PFUser.currentUser()
                 
                 //Updatign the interface on the main queue
                 dispatch_async(dispatch_get_main_queue()) {
@@ -108,7 +108,8 @@ class GarageDoorViewController: UIViewController {
                     formatter.timeStyle = .LongStyle
                     formatter.stringFromDate(date)
                     
-                    self.msgLastUserName.text = "You"
+                    self.avatar.image = UIImage(data: (self.garageState.user.objectForKey("profilePhotho") as? PFFile)!.getData()!)
+                    self.msgLastUserName.text = self.garageState.user.username
                     self.msgLastUser.text = "was the last person to " + state.str + "."
                     self.msgLastDate.text = formatter.stringFromDate(self.garageState.lastUsed)
                     sender.setTitle(state.btn, forState: UIControlState.Normal)
