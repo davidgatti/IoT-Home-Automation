@@ -26,10 +26,10 @@ class MainViewController: UIViewController {
                     // then we can continue getting data and show the main interface.
                     if data["connected"] {
                         
-                        var settings = AppSettings.sharedInstance
+                        var garageState = GarageState.sharedInstance
                         
                         // Retrive all the data from Parse and show the main interface
-                        settings.get({ (result) -> Void in
+                        garageState.get({ (result) -> Void in
                             dispatch_async(dispatch_get_main_queue()) {
                                 self.performSegueWithIdentifier("garageDoor", sender: self)
                             }

@@ -9,29 +9,18 @@
 import Foundation
 import Parse
 
-class AppSettings {
+class GarageState {
 
     //MARK: Static
-    static let sharedInstance = AppSettings()
+    static let sharedInstance = GarageState()
 
     //MARK: Variables
     var isOpen: Int = 0
     var useCount: Int = 0
-    var lastUser: String = ""
+    var user: PFUser!
+    var lastUser: String!
     var lastUsed: NSDate = NSDate.distantPast() as! NSDate
     var avatar: UIImage!
-    var userID: String {
-        get {
-            var tmpUserID: String = ""
-            
-            let defaults = NSUserDefaults.standardUserDefaults()
-            if let userID = defaults.stringForKey("userID") {
-                tmpUserID = userID
-            }
-            
-            return tmpUserID
-        }
-    }
     
     //MARK: Get
     
@@ -64,6 +53,7 @@ class AppSettings {
             user?.fetch()
             
             self.lastUser = user!.username!
+            self.isOpen = (lastEntry?.objectForKey("state") as? Int)!
             
             if let file = user?.objectForKey("profilePhotho") as? PFFile, data = file.getData() {
                 self.avatar = UIImage(data: data)

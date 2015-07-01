@@ -12,7 +12,7 @@ import Parse
 class GarageDoorViewController: UIViewController {
     
     //MARK: Variables
-    var setting = AppSettings.sharedInstance
+    var garageState = GarageState.sharedInstance
     
     //MARK: Outlets
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -43,12 +43,12 @@ class GarageDoorViewController: UIViewController {
             formatter.dateStyle = NSDateFormatterStyle.LongStyle
             formatter.timeStyle = .MediumStyle
             
-            self.avatar.image = self.setting.avatar
-            self.msgLastUserName.text = self.setting.lastUser
+            self.avatar.image = self.garageState.avatar
+            self.msgLastUserName.text = self.garageState.lastUser
             self.msgLastUser.text = "was the last person to " + state.str + "."
-            self.msgLastDate.text = formatter.stringFromDate(self.setting.lastUsed)
+            self.msgLastDate.text = formatter.stringFromDate(self.garageState.lastUsed)
             self.btnOC.setTitle(state.btn, forState: UIControlState.Normal)
-            self.msgUseCount.text = String(self.setting.useCount)
+            self.msgUseCount.text = String(self.garageState.useCount)
         }
     }
     
@@ -59,7 +59,7 @@ class GarageDoorViewController: UIViewController {
         var strState: String
         var isOpen: Int
         
-        if self.setting.isOpen == 0 {
+        if self.garageState.isOpen == 0 {
             btnState = "Close"
             strState = "open"
             isOpen = 1
@@ -95,7 +95,8 @@ class GarageDoorViewController: UIViewController {
             } else {
                 
                 var state = self.garageDoorState()
-                self.setting.isOpen = state.open
+                
+                self.garageState.isOpen = state.open
                 
                 //Updatign the interface on the main queue
                 dispatch_async(dispatch_get_main_queue()) {
@@ -109,12 +110,12 @@ class GarageDoorViewController: UIViewController {
                     
                     self.msgLastUserName.text = "You"
                     self.msgLastUser.text = "was the last person to " + state.str + "."
-                    self.msgLastDate.text = formatter.stringFromDate(self.setting.lastUsed)
+                    self.msgLastDate.text = formatter.stringFromDate(self.garageState.lastUsed)
                     sender.setTitle(state.btn, forState: UIControlState.Normal)
-                    self.msgUseCount.text = String(self.setting.useCount++)
+                    self.msgUseCount.text = String(self.garageState.useCount++)
                     
                     // Saving settings
-                    self.setting.set({ (result) -> Void in })
+                    self.garageState.set({ (result) -> Void in })
                     
                     // Reenable the user interface
                     sender.enabled = true

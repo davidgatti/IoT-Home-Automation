@@ -29,7 +29,7 @@
 		E59BF4A31B3C877900DF65E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */; };
 		E5A3F1F51B3F1F140031EDA8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */; };
 		E5D36DF41B24FE19004B675F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5D36DF31B24FE19004B675F /* Settings.bundle */; };
-		E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36DF51B2644A9004B675F /* AppSettings.swift */; };
+		E5D36DF61B2644A9004B675F /* GarageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36DF51B2644A9004B675F /* GarageState.swift */; };
 		E5DB28C61B2DFE6600B3C093 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28C51B2DFE6600B3C093 /* Bolts.framework */; };
 		E5DB28C81B2DFE7100B3C093 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28C71B2DFE7100B3C093 /* Parse.framework */; };
 		E5DB28CA1B2DFF2000B3C093 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DB28C91B2DFF2000B3C093 /* AudioToolbox.framework */; };
@@ -88,7 +88,7 @@
 		E59BF4A21B3C877900DF65E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5A3F1F41B3F1F140031EDA8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		E5D36DF31B24FE19004B675F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		E5D36DF51B2644A9004B675F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		E5D36DF51B2644A9004B675F /* GarageState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageState.swift; sourceTree = "<group>"; };
 		E5DB28C51B2DFE6600B3C093 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5DB28C71B2DFE7100B3C093 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E5DB28C91B2DFF2000B3C093 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -210,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				E59B08F31B23FA6F009B50D4 /* Http.swift */,
-				E5D36DF51B2644A9004B675F /* AppSettings.swift */,
+				E5D36DF51B2644A9004B675F /* GarageState.swift */,
 				E54E6C111B423565003B3E53 /* User.swift */,
 				E54E6C0F1B420851003B3E53 /* ImageResize.swift */,
 				E549F9821B439C7E0046F672 /* Secrets.swift */,
@@ -370,7 +370,7 @@
 				E59BF4A31B3C877900DF65E1 /* LoginViewController.swift in Sources */,
 				E54E6C0C1B40D3AF003B3E53 /* UserSettingsViewController.swift in Sources */,
 				E59B08CE1B22974F009B50D4 /* MainViewController.swift in Sources */,
-				E5D36DF61B2644A9004B675F /* AppSettings.swift in Sources */,
+				E5D36DF61B2644A9004B675F /* GarageState.swift in Sources */,
 				E549F9831B439C7E0046F672 /* Secrets.swift in Sources */,
 				E55C85B81B2CAF090063B75E /* NewAccountViewController.swift in Sources */,
 				E5DB28E61B31419000B3C093 /* AvatarViewController.swift in Sources */,
