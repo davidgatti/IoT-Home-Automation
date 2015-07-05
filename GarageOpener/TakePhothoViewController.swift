@@ -50,15 +50,7 @@ class TakePhothoViewController: UIViewController, UIImagePickerControllerDelegat
         
         user.photho = imageData
         
-        // Load the storry board and select the right view.
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("settings") as! UIViewController
-        
-        // Dismiss this veiw to keep the right history of views
         self.dismissViewControllerAnimated(true, completion: nil)
-        
-        // Transition to the next view
-        self.presentViewController(vc, animated: true, completion: nil)
         
     }
 

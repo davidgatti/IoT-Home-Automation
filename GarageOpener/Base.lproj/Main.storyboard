@@ -276,7 +276,7 @@
             </objects>
             <point key="canvasLocation" x="212" y="1867"/>
         </scene>
-        <!--Take Photho View Controller-->
+        <!--Photho-->
         <scene sceneID="ISu-2E-zU3">
             <objects>
                 <viewController id="bpS-1k-KWS" customClass="TakePhothoViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
@@ -332,7 +332,7 @@
                             <constraint firstItem="Ff3-ua-BfV" firstAttribute="top" secondItem="Q6f-Wo-jz5" secondAttribute="bottom" constant="22" id="nJv-wJ-qdr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Lpu-tC-zyg"/>
+                    <navigationItem key="navigationItem" title="Photho" id="Lpu-tC-zyg"/>
                     <connections>
                         <outlet property="ivPhotho" destination="Q6f-Wo-jz5" id="GIt-Ol-RW0"/>
                     </connections>
@@ -341,7 +341,7 @@
             </objects>
             <point key="canvasLocation" x="1836" y="448"/>
         </scene>
-        <!--Title-->
+        <!--Settings-->
         <scene sceneID="RIG-3W-tgL">
             <objects>
                 <tableViewController id="kEw-GR-vvx" customClass="UserSettingsViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
@@ -356,7 +356,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="actChengePhotho:" destination="kEw-GR-vvx" eventType="touchUpInside" id="ZAv-rU-17H"/>
+                                <segue destination="kAO-P8-6j7" kind="show" id="INb-QH-R75"/>
                             </connections>
                         </button>
                         <sections>
@@ -435,7 +435,7 @@
                             <outlet property="delegate" destination="kEw-GR-vvx" id="XGS-rf-DSX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="kzX-kh-aBO">
+                    <navigationItem key="navigationItem" title="Settings" id="kzX-kh-aBO">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Uow-Hp-f1I">
                             <connections>
                                 <action selector="actCancel:" destination="kEw-GR-vvx" id="Z9F-1n-9kN"/>

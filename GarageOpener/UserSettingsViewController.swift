@@ -49,12 +49,6 @@ class UserSettingsViewController: UITableViewController {
         
     }
     
-    @IBAction func actChengePhotho(sender: AnyObject) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("takePhotho") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
     @IBAction func logout(sender: AnyObject) {
         
         self.user.logOut()

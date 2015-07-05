@@ -32,6 +32,19 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     }
     
+    func correctlyOrientedImage(image: UIImage) -> UIImage {
+        if image.imageOrientation == UIImageOrientation.Up {
+            return image
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+        image.drawInRect(CGRectMake(0, 0, image.size.width, image.size.height))
+        var normalizedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return normalizedImage;
+    }
+    
     @IBAction func saveImage(sender: AnyObject) {
         
         // Disabling the interface interaction while saving.
@@ -48,7 +61,7 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         var smallImage = self.imgObject.resizeImage(imageView.image!, newSize: size)
         
         // Converting the image in to a JPG
-        let imageData = UIImageJPEGRepresentation(smallImage, 1.0)
+        let imageData = UIImageJPEGRepresentation(self.correctlyOrientedImage(smallImage), 1.0)
         
         // Converting the image in to a Pars file
         let imageFile = PFFile(name: "avatar.jpg", data: imageData)
