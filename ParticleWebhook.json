@@ -1,0 +1,15 @@
+{
+  "event": "waterflow",
+  "url": "https://particle2parse.herokuapp.com",
+  "requestType": "POST",
+  "json": {
+    "accessorieID" : {
+      "__type" : "{{acPointer}}",
+      "className" : "{{acClassName}}",
+      "objectId" : "{{acObjectId}}"
+    },
+    "tag" : "{{tag}}",
+    "value" : "{{value}}"
+  },
+  "mydevices": true
+}
