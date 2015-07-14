@@ -9,3 +9,13 @@ You can read more about this issue in the [forum post](https://community.particl
 # Hosting
 
 This app needs to be hosted somwhere. I choose Heroku, but you can host this app anywhere where NodeJS is supported.
+
+# Secret File
+
+For this app to run, you need to create a new file called `secrets.js` in the root dirrectory of the NodeJS proejct, and past the following
+
+```{.js}
+module.exports.applicatioID = "XXX";
+module.exports.apiKey = "XXX";
+```
+Where the XXX are your Parse ApplicationID and ApiKey.
