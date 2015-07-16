@@ -299,6 +299,62 @@
             </objects>
             <point key="canvasLocation" x="212" y="1867"/>
         </scene>
+        <!--Water-->
+        <scene sceneID="BXb-kg-Mpu">
+            <objects>
+                <tableViewController title="Water" id="JR6-RJ-H1F" customClass="WaterUsageTableViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="T27-Bt-QSF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="BL9-bK-AUQ">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BL9-bK-AUQ" id="boG-CB-PfJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JR6-RJ-H1F" id="GhZ-gK-IBi"/>
+                            <outlet property="delegate" destination="JR6-RJ-H1F" id="B3i-58-EeH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Water Usage" id="wzT-MZ-vjr">
+                        <barButtonItem key="backBarButtonItem" title="Test" id="8Ak-7h-8fm"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3K-jJ-Ant" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="2607"/>
+        </scene>
+        <!--Test-->
+        <scene sceneID="7a9-HF-nZT">
+            <objects>
+                <navigationController title="Test" id="cxz-Xz-cA5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EMk-eX-Zg7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VUN-AJ-NaY">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="JR6-RJ-H1F" kind="relationship" relationship="rootViewController" id="8Td-yR-vrL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGX-1U-pc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-337" y="2402"/>
+        </scene>
         <!--Photho-->
         <scene sceneID="ISu-2E-zU3">
             <objects>
@@ -502,10 +558,10 @@
             </objects>
             <point key="canvasLocation" x="1024" y="1156"/>
         </scene>
-        <!--Grid View Controller-->
+        <!--Main-->
         <scene sceneID="7Vq-Vz-xBr">
             <objects>
-                <viewController storyboardIdentifier="garageDoorControll" id="3x4-sr-Zg0" customClass="GridViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="garageDoorControll" title="Main" id="3x4-sr-Zg0" customClass="GridViewController" customModule="GarageOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ajT-ve-Car"/>
                         <viewControllerLayoutGuide type="bottom" id="rG7-Jm-UDx"/>
@@ -524,15 +580,25 @@
                                     <action selector="actGarageOpener:" destination="3x4-sr-Zg0" eventType="touchUpInside" id="uSf-Nw-oO0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGe-yh-rHg">
+                                <rect key="frame" x="256" y="349" width="89" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Water Usage"/>
+                                <connections>
+                                    <action selector="actWaterUsage:" destination="3x4-sr-Zg0" eventType="touchUpInside" id="LA9-Zg-80b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xGe-yh-rHg" firstAttribute="centerX" secondItem="pU4-cg-Ijs" secondAttribute="centerX" id="2Ct-nW-Jfd"/>
                             <constraint firstItem="pU4-cg-Ijs" firstAttribute="centerX" secondItem="ci1-uI-hQC" secondAttribute="centerX" id="KY2-WP-ROd"/>
                             <constraint firstItem="pU4-cg-Ijs" firstAttribute="centerY" secondItem="ci1-uI-hQC" secondAttribute="centerY" id="sRs-2h-D1f"/>
+                            <constraint firstItem="xGe-yh-rHg" firstAttribute="top" secondItem="pU4-cg-Ijs" secondAttribute="bottom" constant="34" id="zmX-eS-ldw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sHe-ds-fwW">
+                    <navigationItem key="navigationItem" title="Main" id="sHe-ds-fwW">
                         <barButtonItem key="leftBarButtonItem" title="User" id="M7Y-ni-sTj">
                             <connections>
                                 <segue destination="8Nm-Bi-02s" kind="presentation" id="aAf-e5-5Ob"/>
@@ -541,6 +607,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="nz9-he-jL5" kind="show" id="2aK-fR-UXj"/>
+                        <segue destination="cxz-Xz-cA5" kind="show" identifier="waterUsage" id="z9q-Ac-FAy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0Q-ih-h2p" userLabel="First Responder" sceneMemberID="firstResponder"/>

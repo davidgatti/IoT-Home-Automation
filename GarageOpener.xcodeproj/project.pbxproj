@@ -14,6 +14,7 @@
 		E54E6C101B420851003B3E53 /* ImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C0F1B420851003B3E53 /* ImageResize.swift */; };
 		E54E6C121B423565003B3E53 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6C111B423565003B3E53 /* User.swift */; };
 		E55C85B81B2CAF090063B75E /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */; };
+		E57166811B578C0C0091AC42 /* WaterUsageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57166801B578C0C0091AC42 /* WaterUsageTableViewController.swift */; };
 		E597B90B1B37241400D84514 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597B90A1B37241400D84514 /* ErrorViewController.swift */; };
 		E59B08C91B22974F009B50D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B08C81B22974F009B50D4 /* AppDelegate.swift */; };
 		E59B08CC1B22974F009B50D4 /* GarageOpener.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E59B08CA1B22974F009B50D4 /* GarageOpener.xcdatamodeld */; };
@@ -67,6 +68,7 @@
 		E54E6C0F1B420851003B3E53 /* ImageResize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResize.swift; sourceTree = "<group>"; };
 		E54E6C111B423565003B3E53 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E55C85B71B2CAF090063B75E /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		E57166801B578C0C0091AC42 /* WaterUsageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterUsageTableViewController.swift; sourceTree = "<group>"; };
 		E597B90A1B37241400D84514 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E59B08C31B22974F009B50D4 /* GarageOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59B08C71B22974F009B50D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				E59B08CF1B22974F009B50D4 /* Main.storyboard */,
 				E5584EF01B446CD000DAB558 /* User */,
 				E59B08CD1B22974F009B50D4 /* MainViewController.swift */,
+				E57166801B578C0C0091AC42 /* WaterUsageTableViewController.swift */,
 				E59B08F91B24E539009B50D4 /* GarageDoorViewController.swift */,
 				E597B90A1B37241400D84514 /* ErrorViewController.swift */,
 				E54E6C091B406C12003B3E53 /* GridViewController.swift */,
@@ -401,6 +404,7 @@
 				E597B90B1B37241400D84514 /* ErrorViewController.swift in Sources */,
 				E59B08F61B24B94B009B50D4 /* SwiftJSON.swift in Sources */,
 				E54E6C121B423565003B3E53 /* User.swift in Sources */,
+				E57166811B578C0C0091AC42 /* WaterUsageTableViewController.swift in Sources */,
 				E54E6C101B420851003B3E53 /* ImageResize.swift in Sources */,
 				E59B08FA1B24E539009B50D4 /* GarageDoorViewController.swift in Sources */,
 				E54E6C0E1B41F406003B3E53 /* TakePhothoViewController.swift in Sources */,

@@ -22,6 +22,11 @@ class GridViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func actWaterUsage(sender: AnyObject) {
+        self.performSegueWithIdentifier("waterUsage", sender: self)
+
+    }
+    
     @IBAction func actGarageOpener(sender: AnyObject) {
         // First, lets check if Particle is connected.
         httpGet("") { (data, error) -> Void in
