@@ -35,7 +35,7 @@ class GarageDoorViewController: UIViewController {
     //MARK: Functions
     func loda() {
 
-        var state = self.garageDoorState()
+        let state = self.garageDoorState()
                 
         dispatch_async(dispatch_get_main_queue()) {
             // Format and display the date based on the iPhone locale.
@@ -57,7 +57,6 @@ class GarageDoorViewController: UIViewController {
         
         var btnState: String
         var strState: String
-        var isOpen: Int
         
         if self.garageState.isOpen == 0 {
             btnState = "Close"
@@ -86,21 +85,21 @@ class GarageDoorViewController: UIViewController {
         spinner.hidden = false
         
         // Calling the Particle function responsabile for closing and opening the garage door
-        httpPost("openclose", "") { (data, error) -> Void in
+        httpPost("openclose", parameters: "") { (data, error) -> Void in
             
             if error != nil {
                 
-                println(error!.localizedDescription)
+                print(error!.localizedDescription)
                 
             } else {
                 
-                var state = self.garageDoorState()
+                let state = self.garageDoorState()
                 
                 self.garageState.user = PFUser.currentUser()
                 
                 //Updatign the interface on the main queue
                 dispatch_async(dispatch_get_main_queue()) {
-                    
+
                     // Update the date to now.
                     let date = NSDate()
                     let formatter = NSDateFormatter()

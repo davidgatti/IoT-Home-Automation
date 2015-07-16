@@ -28,7 +28,7 @@ class UserSettingsViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        var image = UIImage(data: self.user.photho!)
+        let image = UIImage(data: self.user.photho!)
         self.btnPhotho.setBackgroundImage(image, forState: UIControlState.Normal)
     }
     
@@ -44,7 +44,7 @@ class UserSettingsViewController: UITableViewController {
         self.user.logOut()
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("credentialsNavigatin") as! UIViewController
+        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("credentialsNavigatin") as UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
         
     }
@@ -54,7 +54,7 @@ class UserSettingsViewController: UITableViewController {
         self.user.logOut()
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("credentialsNavigatin") as! UIViewController
+        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("credentialsNavigatin") as UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
 

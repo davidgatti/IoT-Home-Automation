@@ -23,7 +23,7 @@ class TakePhothoViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     //MARK: Functions
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             ivPhotho.image = pickedImage
@@ -41,9 +41,9 @@ class TakePhothoViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func actSave(sender: AnyObject) {
         
-        var size: CGSize = CGSize(width: 100, height: 100)
-        var img = ImageResize()
-        var smallImage = img.resizeImage(ivPhotho.image!, newSize: size)
+        let size: CGSize = CGSize(width: 100, height: 100)
+        let img = ImageResize()
+        let smallImage = img.resizeImage(ivPhotho.image!, newSize: size)
         
         // Converting the image in to a JPG
         let imageData = UIImageJPEGRepresentation(smallImage, 1.0)

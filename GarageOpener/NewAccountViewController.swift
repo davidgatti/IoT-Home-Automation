@@ -28,7 +28,7 @@ class NewAccountViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        var desitnationView: AvatarViewController = segue.destinationViewController as! AvatarViewController
+        let desitnationView: AvatarViewController = segue.destinationViewController as! AvatarViewController
 
         desitnationView.userName = self.tfname.text
         desitnationView.userEmail = self.tfEmail.text
