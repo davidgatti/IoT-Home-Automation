@@ -16,10 +16,9 @@ func httpGet(name: String, callback: (JSON, NSError?) -> Void) {
     let url = "https://api.particle.io/v1/devices/" + device + "/" + name + "?access_token=" + token
     
     let request = NSMutableURLRequest(URL: NSURL(string: url)!)
-    var session = NSURLSession.sharedSession()
-    var task = session.dataTaskWithRequest(request){(data, response, error) -> Void in
-    var result = NSString(data: data, encoding: NSASCIIStringEncoding)!
-    var json = JSON(data: data)
+    let session = NSURLSession.sharedSession()
+    let task = session.dataTaskWithRequest(request){(data, response, error) -> Void in
+    let json = JSON(data: data!)
         
         if error != nil {
             
@@ -32,12 +31,12 @@ func httpGet(name: String, callback: (JSON, NSError?) -> Void) {
         }
     }
     
-    task.resume()
+    task!.resume()
 }
 
 func httpPost(name: String, parameters: String, callback: (NSData, NSError?) -> Void) {
 
-    var postString = "access_token=" + token + "&" + parameters
+    let postString = "access_token=" + token + "&" + parameters
     
     let url = "https://api.particle.io/v1/devices/" + device + "/" + name
     
@@ -45,19 +44,19 @@ func httpPost(name: String, parameters: String, callback: (NSData, NSError?) -> 
         request.HTTPMethod = "POST"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
-    var session = NSURLSession.sharedSession()
-    var task = session.dataTaskWithRequest(request){(data, response, error) -> Void in
+    let session = NSURLSession.sharedSession()
+    let task = session.dataTaskWithRequest(request){(data, response, error) -> Void in
         
         if error != nil {
             
-            callback(data, error)
+            callback(data!, error)
             
         } else {
             
-            callback(data, nil)
+            callback(data!, nil)
             
         }
     }
     
-    task.resume()
+    task!.resume()
 }

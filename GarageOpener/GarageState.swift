@@ -18,7 +18,7 @@ class GarageState {
     var user: PFUser!
     var isOpen: Int = 0
     var useCount: Int = 0
-    var lastUsed: NSDate = NSDate.distantPast() as! NSDate
+    var lastUsed: NSDate = NSDate.distantPast() as NSDate
     
     //MARK: Get
     
@@ -43,7 +43,7 @@ class GarageState {
     
     private func getLastUser(completition:() -> ()) {
         
-        var qHistory = PFQuery(className: "History")
+        let qHistory = PFQuery(className: "History")
         qHistory.orderByDescending("createdAt")
         qHistory.getFirstObjectInBackgroundWithBlock { (lastEntry: PFObject?, error) -> Void in
             
@@ -58,7 +58,7 @@ class GarageState {
     
     private func getUseCount(completition:() -> ()) {
         
-        var qGarageDoor = PFQuery(className:"GarageDoor")
+        let qGarageDoor = PFQuery(className:"GarageDoor")
         qGarageDoor.getObjectInBackgroundWithId("eX9QCJGga5") { (garage: PFObject?, error: NSError?) -> Void in
             
             self.useCount = (garage!.objectForKey("useCount") as! Int)
@@ -87,7 +87,7 @@ class GarageState {
     
     private func setGarageDoor(completition: (result: String) -> Void) {
     
-        var query = PFObject(withoutDataWithClassName: "GarageDoor", objectId: "eX9QCJGga5")
+        let query = PFObject(withoutDataWithClassName: "GarageDoor", objectId: "eX9QCJGga5")
         
         query["useCount"] = self.useCount
         

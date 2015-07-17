@@ -20,7 +20,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func actLogin(sender: AnyObject) {
         
-        PFUser.logInWithUsernameInBackground(tfUserEmail.text, password:tfUserPassword.text) {
+        print("User: " + tfUserEmail.text!)
+        print("Password: " + tfUserPassword.text!)
+        
+        PFUser.logInWithUsernameInBackground(tfUserEmail.text!, password:tfUserPassword.text!) {
             (user: PFUser?, error: NSError?) -> Void in
 
             if user != nil {
@@ -31,7 +34,7 @@ class LoginViewController: UIViewController {
                 if confirmed == true {
                 
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                    let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainView") as! UIViewController
+                    let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainView") as UIViewController
                     self.presentViewController(vc, animated: true, completion: nil)
                     
                 } else {
@@ -48,7 +51,7 @@ class LoginViewController: UIViewController {
             } else {
                 // The login failed. Check error to see why.
                 
-                println("The error occurd :)")
+                print(error)
             }
         }
         

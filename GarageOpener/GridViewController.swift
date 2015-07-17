@@ -13,13 +13,19 @@ class GridViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func actWaterUsage(sender: AnyObject) {
+        self.performSegueWithIdentifier("waterUsage", sender: self)
     }
-
+    
+    @IBAction func actGarageOpener(sender: AnyObject) {
+        let garageState = GarageState.sharedInstance
+        
+        garageState.get({ (result) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.performSegueWithIdentifier("garageDoorControll", sender: self)
+            }
+        })
+    }
 }

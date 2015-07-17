@@ -58,10 +58,10 @@ class User {
     
     init() {
         
-        println("Init")
+        print("Init")
         
-        println("User Name: " + self.user!.username!)
-        println("Email: " + self.user!.email!)
+        print("User Name: " + self.user!.username!)
+        print("Email: " + self.user!.email!)
         
         self.tmpUsername = self.user!.username
         self.tmpEmail = self.user!.email
@@ -70,10 +70,10 @@ class User {
     
     private func save() {
         
-        println("Saving")
+        print("Saving")
         
-        println("User Name: " + self.tmpUsername)
-        println("Email: " + self.tmpEmail!)
+        print("User Name: " + self.tmpUsername)
+        print("Email: " + self.tmpEmail!)
         
         
         let imageFile = PFFile(name: "avatar.jpg", data: self.tmpPhotho)

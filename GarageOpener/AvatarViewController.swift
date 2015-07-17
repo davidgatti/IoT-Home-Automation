@@ -39,7 +39,7 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
         image.drawInRect(CGRectMake(0, 0, image.size.width, image.size.height))
-        var normalizedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        let normalizedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         return normalizedImage;
@@ -54,17 +54,17 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         btnTakePhotho.enabled = false
         
         // New size for the image
-        var size: CGSize = CGSize(width: 100, height: 100)
+        let size: CGSize = CGSize(width: 100, height: 100)
         
         // Resizign the image
 
-        var smallImage = self.imgObject.resizeImage(imageView.image!, newSize: size)
+        let smallImage = self.imgObject.resizeImage(imageView.image!, newSize: size)
         
         // Converting the image in to a JPG
         let imageData = UIImageJPEGRepresentation(self.correctlyOrientedImage(smallImage), 1.0)
         
         // Converting the image in to a Pars file
-        let imageFile = PFFile(name: "avatar.jpg", data: imageData)
+        let imageFile = PFFile(name: "avatar.jpg", data: imageData!)
         imageFile.save()
         
         // Making a Parse query
@@ -77,9 +77,9 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
         user.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
             if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
+                let errorString = error.userInfo["error"] as? NSString
 
-                println(errorString)
+                print(errorString)
                 
             } else {
                 
@@ -88,7 +88,7 @@ class AvatarViewController: UIViewController, UIImagePickerControllerDelegate, U
                 defaults.setValue(user.objectId!, forKey: "userID")
                 
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainView") as! UIViewController
+                let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainView") as UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }
         }

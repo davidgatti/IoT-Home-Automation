@@ -35,7 +35,7 @@ class GarageDoorViewController: UIViewController {
     //MARK: Functions
     func loda() {
 
-        var state = self.garageDoorState()
+        let state = self.garageDoorState()
                 
         dispatch_async(dispatch_get_main_queue()) {
             // Format and display the date based on the iPhone locale.
@@ -43,7 +43,7 @@ class GarageDoorViewController: UIViewController {
             formatter.dateStyle = NSDateFormatterStyle.LongStyle
             formatter.timeStyle = .MediumStyle
             
-            self.avatar.image = UIImage(data: (self.garageState.user.objectForKey("profilePhotho") as? PFFile)!.getData()!)
+            //self.avatar.image = UIImage(data: (self.garageState.user.objectForKey("profilePhotho") as? PFFile)!.getData()!)
             self.msgLastUserName.text = self.garageState.user.username
             self.msgLastUser.text = "was the last person to " + state.str + "."
             self.msgLastDate.text = formatter.stringFromDate(self.garageState.lastUsed)
@@ -57,7 +57,6 @@ class GarageDoorViewController: UIViewController {
         
         var btnState: String
         var strState: String
-        var isOpen: Int
         
         if self.garageState.isOpen == 0 {
             btnState = "Close"
@@ -85,45 +84,70 @@ class GarageDoorViewController: UIViewController {
         sender.enabled = false
         spinner.hidden = false
         
-        // Calling the Particle function responsabile for closing and opening the garage door
-        httpPost("openclose", "") { (data, error) -> Void in
+        // First, lets check if Particle is connected.
+        httpGet("") { (data, error) -> Void in
             
-            if error != nil {
+            if error == nil {
                 
-                println(error!.localizedDescription)
-                
-            } else {
-                
-                var state = self.garageDoorState()
-                
-                self.garageState.user = PFUser.currentUser()
-                
-                //Updatign the interface on the main queue
-                dispatch_async(dispatch_get_main_queue()) {
-                    
-                    // Update the date to now.
-                    let date = NSDate()
-                    let formatter = NSDateFormatter()
-                    formatter.dateStyle = .LongStyle
-                    formatter.timeStyle = .LongStyle
-                    formatter.stringFromDate(date)
-                    
-                    self.avatar.image = UIImage(data: (self.garageState.user.objectForKey("profilePhotho") as? PFFile)!.getData()!)
-                    self.msgLastUserName.text = self.garageState.user.username
-                    self.msgLastUser.text = "was the last person to " + state.str + "."
-                    self.msgLastDate.text = formatter.stringFromDate(self.garageState.lastUsed)
-                    sender.setTitle(state.btn, forState: UIControlState.Normal)
-                    self.msgUseCount.text = String(self.garageState.useCount++)
-                    
-                    // Saving settings
-                    self.garageState.set({ (result) -> Void in })
-                    
-                    // Reenable the user interface
-                    sender.enabled = true
-                    self.spinner.hidden = true
+                // If we have the remote connected to the internets,
+                // then we can continue getting data and show the main interface.
+                if  data["connected"] {
+                    // Calling the Particle function responsabile for closing and opening the garage door
+                    httpPost("openclose", parameters: "") { (data, error) -> Void in
+                        
+                        if error != nil {
+                            
+                            print(error!.localizedDescription)
+                            
+                        } else {
+                            
+                            let state = self.garageDoorState()
+                            
+                            self.garageState.user = PFUser.currentUser()
+                            
+                            //Updatign the interface on the main queue
+                            dispatch_async(dispatch_get_main_queue()) {
+                                
+                                // Update the date to now.
+                                let date = NSDate()
+                                let formatter = NSDateFormatter()
+                                formatter.dateStyle = .LongStyle
+                                formatter.timeStyle = .LongStyle
+                                formatter.stringFromDate(date)
+                                
+                                self.avatar.image = UIImage(data: (self.garageState.user.objectForKey("profilePhotho") as? PFFile)!.getData()!)
+                                self.msgLastUserName.text = self.garageState.user.username
+                                self.msgLastUser.text = "was the last person to " + state.str + "."
+                                self.msgLastDate.text = formatter.stringFromDate(self.garageState.lastUsed)
+                                sender.setTitle(state.btn, forState: UIControlState.Normal)
+                                self.msgUseCount.text = String(self.garageState.useCount++)
+                                
+                                // Saving settings
+                                self.garageState.set({ (result) -> Void in })
+                                
+                                // Reenable the user interface
+                                sender.enabled = true
+                                self.spinner.hidden = true
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("errorView") as UIViewController
+                        self.presentViewController(vc, animated: true, completion: nil)
+                    }
                 }
             }
+            else
+            {
+                print(error!.localizedDescription)
+            }
         }
+        
+        
     }
     
     deinit {
