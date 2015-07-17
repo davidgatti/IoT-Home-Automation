@@ -1,6 +1,6 @@
 # NodeJS Proxy App
 
-This branch is only used when you are buildign the IoT Water Flow Meter, since that project is esentialy a data logger. Which means that we wait for water to flow, collect the data, and send it to Parse.com. For this to happen we need to make RESTfull API calls. 
+This branch is only used when you are buildign the [IoT Water Flow Meter](https://www.hackster.io/davidgatti/iot-water-flow-meter), since that project is esentialy a data logger. Which means that we wait for water to flow, collect the data, and send it to Parse.com. For this to happen we need to make RESTfull API calls. 
 
 This can be done using the Webhook feature that Particle is providing. But, as you can imagine there is an issue. For some reason people at Particle decided to add additional data to the JSON blob that you send out. Because of this, Parse is unable to process the incoming request. 
 
