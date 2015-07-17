@@ -4,7 +4,7 @@ This branch is only used when you are buildign the [IoT Water Flow Meter](https:
 
 This can be done using the Webhook feature that Particle is providing. But, as you can imagine there is an issue. For some reason people at Particle decided to add additional data to the JSON blob that you send out. Because of this, Parse is unable to process the incoming request. 
 
-You can read more about this issue in the [forum post](https://community.particle.io/t/webhooks-parse-com/13010). One of the developer sad it will work to fix this issue but the time frame is known. Because of this I decided to just write the proxy and get over this issue. 
+You can read more about this issue in this [forum post](https://community.particle.io/t/webhooks-parse-com/13010). One of the developer sad it will work to fix this issue but the time frame is known. Because of this I decided to just write the proxy and get over this issue. 
 
 # Hosting
 
@@ -18,4 +18,5 @@ For this app to run, you need to create a new file called `secrets.js` in the ro
 module.exports.applicatioID = "XXX";
 module.exports.apiKey = "XXX";
 ```
-Where the XXX are your Parse ApplicationID and ApiKey.
+
+Where the XXX is your Parse ApplicationID and ApiKey.
