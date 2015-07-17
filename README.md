@@ -1,5 +1,14 @@
-# Firmware for Particle
+# Firmware files for Particle
 
-This branch contains the firware that goes in to each Particle. 
+This branch contains firware files for the Particle devices.
 
-This branch should not be merged with the master or any other.
+## File descritpins 
+
+[IoT Garage Openere](https://www.hackster.io/davidgatti/garage-opener)
+
+- **GarageOpener.ino**: the only file needed for this proejct.
+
+[IoT Water Flow Meter](https://www.hackster.io/davidgatti/iot-water-flow-meter)
+
+- **WaterFlow.ino**: the firware file for particle.
+- **ParticleWebhook.json**: the Webhook description for Particle.
