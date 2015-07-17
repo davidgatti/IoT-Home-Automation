@@ -15,18 +15,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         let currentUser = PFUser.currentUser()
+
         if currentUser != nil {
-            
-//            let garageState = GarageState.sharedInstance
-//            garageState.get({ (result) -> Void in })
-            
             dispatch_async(dispatch_get_main_queue()) {
                 self.performSegueWithIdentifier("gridView", sender: self)
             }
             
         }
-        else
-        {
+        else {
             dispatch_async(dispatch_get_main_queue()) {
                 self.performSegueWithIdentifier("decisionView", sender: self)
             }

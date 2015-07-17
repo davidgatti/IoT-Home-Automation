@@ -606,7 +606,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="nz9-he-jL5" kind="show" id="2aK-fR-UXj"/>
+                        <segue destination="nz9-he-jL5" kind="show" identifier="garageDoorControll" id="2aK-fR-UXj"/>
                         <segue destination="cxz-Xz-cA5" kind="show" identifier="waterUsage" id="z9q-Ac-FAy"/>
                     </connections>
                 </viewController>
