@@ -1,3 +1,5 @@
+[![Gittip][gittip-image]][gittip-url]
+
 ![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/assets/Images/header.jpg "IoT Garage Opener")
 
 # IoT-Garage-Opener
@@ -37,3 +39,5 @@ For Parse you will need the following keys
 
 Save, compile and enjoy :)
 
+[gittip-image]: https://img.shields.io/gittip/dougwilson.svg
+[gittip-url]: https://www.gittip.com/davidgatti/
