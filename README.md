@@ -39,7 +39,7 @@ For Parse you will need the following keys
 
 Save, compile and enjoy :)
 
-# Other
+# The End
 
 If you've enjoyed this article/project, please consider giving it a 🌟. Also check out my [GitHub account] (https://github.com/davidgatti), where I have other articles and apps that you might find interesting.
 
