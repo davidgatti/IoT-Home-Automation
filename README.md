@@ -1,5 +1,3 @@
-[![Gittip][gittip-image]][gittip-url]
-
 ![Alt text](https://github.com/davidgatti/IoT-Garage-Opener/blob/assets/Images/header.jpg "IoT Garage Opener")
 
 # IoT-Garage-Opener
@@ -66,7 +64,3 @@ I don’t only live on GitHub, I try to do many things not to get bored 🙃. To
 - [Technical Articles](http://david.gatti.pl/technical_articles)
 - [Software Projects](http://david.gatti.pl/software_projects)
 - [Hardware Projects](http://david.gatti.pl/hardware_projects)
-
-
-[gittip-image]: https://img.shields.io/gittip/dougwilson.svg
-[gittip-url]: https://www.gittip.com/davidgatti/
